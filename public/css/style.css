@@ -1,0 +1,43 @@
+table tr.heading {
+    color: white;
+    background-color: mediumseagreen;
+}
+
+table.details {
+    font-size: 12px;
+}
+
+body {
+    background-image: url("../assets/images/background.jpg");
+    background-repeat: no-repeat;
+}
+
+input:invalid:focus {
+    background-image: linear-gradient(rgb(247, 230, 230), rgb(238, 247, 238));
+    border: 2px solid red;
+}
+
+input.is-invalid {
+    background-image: linear-gradient(rgb(247, 230, 230), rgb(238, 247, 238));
+    border: 2px solid red;
+}
+
+span.help-block {
+    color: red;
+}
+
+button.reload {
+    display: none;
+}
+
+div.justify-content-between>button {
+    margin: 2px;
+}
+
+div.dataTables_processing {
+    background-color: #f0f8ff;
+}
+
+.help-block {
+    font-size: small;
+}

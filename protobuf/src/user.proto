@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package mypackage;
+
+/*
+https://hackmd.io/@tML6ejGhR7q68VfQ4kLDQg/By-WdVz_Y
+1. generate protobuf program for php
+    - $ protoc --proto_path=protobuf \
+    - $ --php_out=protobuf/build protobuf/src/user.proto
+2. set psr-4 autoload for php in composer.json
+
+ "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Mypackage\\": "protobuf/build/Mypackage/",
+            "": "protobuf/build/"
+        }
+    },
+    
+*/
+message UserRequest {
+    uint32 id=1;
+}
+
+message User {
+    uint32 id = 1;
+    string name = 2;
+    string email = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}

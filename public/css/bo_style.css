@@ -1,0 +1,54 @@
+table tr.heading {
+    color: white;
+    background-color: mediumseagreen;
+}
+
+table.details {
+    font-size: 12px;
+}
+
+input:invalid:focus, select:invalid:focus {
+    background-image: linear-gradient(rgb(247, 230, 230), rgb(238, 247, 238));
+    border: 2px solid red; 
+}
+
+input.is-invalid, select.is-invalid {
+    background-image: linear-gradient(rgb(247, 230, 230), rgb(238, 247, 238));
+    border: 2px solid red;
+}
+
+span.help-block {
+    color: red;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+button.reload {
+    display: none;
+}
+
+div.justify-content-between>a {
+    margin: 2px;
+}
+
+div.dataTables_processing {
+    background-color: #f0f8ff;
+}
+
+div.help-block {
+    font-size: small;
+}
+
+.filtr-item {
+    box-shadow: 5px 5px #809393;
+    border-radius: 5px;
+}
+
+thead {
+    background-color: #403d3d;
+    color: white;
+}
+
+tr.odd {
+    background-color: #ebf3ef;
+}

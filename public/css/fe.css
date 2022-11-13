@@ -1,0 +1,105 @@
+a.nav-link,
+a.dropdown-item {
+    font-weight: 500;
+}
+
+body,
+.card-body {
+    background-image: url("../assets/images/background/black-dark-1600x900-black-dark-wood-textures-wood---slides-keynote-slides.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    color: #d6e38e;
+}
+
+.card-header,
+.card-footer {
+    background-image: url("../assets/images/boxed-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    color: #161616;
+    font-weight: bold;
+}
+
+.carousel-dark .carousel-caption {
+    color: #d6e38e;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.carousel-item {
+    height: 350px;
+    min-height: 350px;
+    background-size: cover;
+}
+
+.carousel-item img {
+    width: 80%;
+}
+
+#carouselExampleDark2 .carousel-indicators>li {
+    width: 100px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-image: none;
+}
+
+.carousel-control-next-icon:after {
+    content: ">";
+}
+
+.carousel-control-prev-icon:after {
+    content: "<";
+    color: white;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(1);
+}
+
+a.carousel-control-prev,
+.carousel-control-next {
+    color: white;
+    text-decoration: none;
+}
+
+.text-title {
+    font-size: small;
+}
+
+.marquee {
+    height: 25px;
+    width: 420px;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee div {
+    display: block;
+    width: 200%;
+    height: 30px;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 5s linear infinite;
+}
+
+.marquee span {
+    float: left;
+    width: 50%;
+}
+
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
