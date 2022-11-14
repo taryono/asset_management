@@ -73,8 +73,8 @@ class AdminController extends MainController
                 ->addColumn('asset_status', function ($row) {
                     return $row->asset_status ? $row->asset_status->name : "";
                 })
-                ->addColumn('category', function ($row) {
-                    return $row->category ? $row->category->name : "";
+                ->addColumn('asset_category', function ($row) {
+                    return $row->asset_category ? $row->asset_category->name : "";
                 })
                 ->addColumn('subtotal', function ($row) {
                     return 100000;

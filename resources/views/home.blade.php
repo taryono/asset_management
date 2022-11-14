@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Management Assets')
 
 @section('content_header')
     <h1 class="m-0 text-dark">Assalamu'alaikum wrwb...</h1>

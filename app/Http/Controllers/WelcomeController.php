@@ -13,18 +13,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        if(request()->input('search')){
-            //$posts = \Models\Post::search(request()->input('search'))->take(10)->get(); 
-            $post = \Models\Post::first(); 
-        }else{
-            $post = \Models\Post::whereHas('category', function ($q) {
-                $q->whereHas('category_group', function ($q2) {
-                    $q2->where('id', 8);
-                });
-            })
-            ->where('publish_date', '<=', date('Y-m-d H:i:s'))
-            ->where('post_status_id', 2)->first();  
-        }
+        $post = \Models\Post::first(); 
          
         return view('welcome', ['post' => $post]);
     }
@@ -40,12 +29,7 @@ class WelcomeController extends Controller
         $post = \Models\Post::where('slug', $slug)->first();
         return view('post', ['post' => $post]);
     }
-
-    public function album($category, $date, $slug)
-    {
-        $album = \Models\Album::where('slug', $slug)->first();
-        return view('album', ['album' => $album]);
-    }
+ 
 
     public function children(Request $request)
     {
@@ -61,17 +45,11 @@ class WelcomeController extends Controller
         if ($id) {
             $data = $target::find($id);  
         } else {
-            if ($target instanceof \Models\Post || $target instanceof \Models\Album) {
+            if ($target instanceof \Models\Post) {
                 $data = $target::where([
-                    'month' => $month,
-                    'category_id' => $category,
+                    'month' => $month, 
                 ])->get();
-            } 
-            if ($target instanceof \Models\Income || $target instanceof \Models\Expenditure) {
-                $data = $target::where([
-                    'month' => $month ? $month : date('m'),
-                ])->get();
-            }
+            }  
         }
         $tabel = $target->getTable();
         return view("children", ['model' => $model, 'target' => $target, 'data' => $data, 'tabel' => $tabel, 'id' => $id]);

@@ -19,11 +19,7 @@
                         <div class="form-group">
                             <label for="title">Title</label>
                             {{ Form::text('title', null, ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'Judul', 'required']) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="category_id">Kategori</label>
-                            {{ Form::select('category_id', \Models\Category::pluck('name', 'id')->all(), null, ['class' => 'form-control', 'id' => 'category_id', 'placeholder' => '--Pilih Kategori--', 'required']) }}
-                        </div>
+                        </div> 
                         <div class="form-group">
                             <label for="post_status_id">Status</label>
                             {{ Form::select('post_status_id', \Models\PostStatus::pluck('name', 'id')->all(), null, ['class' => 'form-control', 'id' => 'post_status_id', 'placeholder' => '--Pilih Status Publish--', 'required']) }}

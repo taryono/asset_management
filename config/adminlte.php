@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Masjid Mujahidin',
+    'title' => 'Management Assets',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,13 +45,13 @@ return [
     |
     */
 
-    'logo' => '<b>Masjid Mujahidin</b>',
+    'logo' => '<b>Management Assets</b>',
     //'logo_img' => 'plugin_vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img' => 'icon/mesjid.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Masjid Mujahidin',
+    'logo_img_alt' => 'Management Assets',
 
     /*
     |--------------------------------------------------------------------------
@@ -251,140 +251,57 @@ return [
             'icon_color' => 'white',
             'can'=> 'isSuperUser',
             'url'  => '/management/acl', 
-        ],  
-        ['header' => 'MANAJEMEN MASJID', 'can'=> ['asset-index','asset_category-index','asset_type-index', 'asset_status-index']],
+        ],   
         
         [
-            'text'    => 'Manajemen Masjid',
-            'icon'    => 'fas fa-fw fa-mosque',
+            'text'    => 'Manajemen Perusahaan',
+            'icon'    => 'fas fa-fw fa-cogs',
             'label_color' => 'yellow',
-            'can'       => ['management-area','asset-index','asset_category-index','asset_type-index', 'asset_status-index'],
-            'submenu' => [
-                 
+            'can'       => ['company-index'],
+            'url'  => '/company',
+        ], 
+        [
+            'text'    => 'Manajemen Supplier',
+            'icon'    => 'fas fa-fw fa-cogs',
+            'label_color' => 'yellow',
+            'can'       => ['supplier-index'],
+            'url'  => '/supplier',
+        ], 
+        ['header' => 'MANAJEMEN ASSET', 'can'=> ['asset-index','asset_category-index','asset_type-index', 'asset_status-index']],
+        
+        [
+            'text'    => 'Manajemen Asset',
+            'icon'    => 'fas fa-fw fa-document',
+            'label_color' => 'yellow',
+            'can'       => ['asset-index','asset_category-index','asset_type-index', 'asset_status-index'],
+            'submenu' => [ 
                 [
-                    'text'    => 'Manajemen Area Masjid',
-                    'icon'    => 'fas fa-fw fa-map-pin',
-                    'icon_color' => 'white',
-                    'url'  => '/management/area',
-                    'can'=> ['rt-index', 'rw-index', 'subdistrict-index', 'district-index', 'city-index', 'region-index', 'country-index'],            
-                ],  
-                [
-                    'text'    => 'Daftar Masjid & Mushola',
-                    'icon'    => 'fas fa-fw fa-mosque',
-                    'icon_color' => 'white',
-                    'can'=> ['mosque-index', 'mushola-index'],
-                    'url'  => '/management/mosque',
-                ], 
-                [
-                    'text'    => 'Pengurus & Jamaah',
-                    'icon'    => 'fas fa-fw fa-users',
-                    'icon_color' => 'white',
-                    'can'=> ['structure-index','people-index', 'position-index', ],
-                    'url'  => '/management/structure', 
-                ],  
-                [
-                    'text'    => 'Kependidikan',
-                    'icon'    => 'fas fa-fw fa-graduation-cap',
-                    'icon_color' => 'white',
-                    'can'=> ['student-index', 'subject-index', 'teacher-index'],
-                    'url'  => '/management/education', 
-                    
-                ],  
-                [
-                    'text'    => 'Kegiatan Masjid',
-                    'icon'    => 'fas fa-fw fa-table',
-                    'can' => ['event_type-index','event-index','event_section-index'],
-                    'url'  => '/event',
-                ],
-                [
-                    'text'    => 'Asset Masjid',
+                    'text'    => 'Asset',
                     'icon'    => 'fas fa-fw fa-table',
                     'can' => ['asset-index','asset_category-index','asset_type-index', 'asset_status-index',],
                     'url'  => '/management/asset', 
                 ],
-            ],
-        ],
-        [
-            'text'    => 'Manajemen Konten',
-            'icon'    => 'fas fa-fw fa-file',
-            'label_color' => 'yellow',
-            'can'       => 'management-content',
-            'submenu' => [
-                 
                 [
-                    'text'    => 'Manajemen Post',
-                    'icon'    => 'fas fa-fw fa-copy',
-                    'icon_color' => 'green',
-                    'can'=> 'isSuperUser',
-                    'url'  => '/management/post', 
-                ],  
-                [
-                    'text'    => 'Manajemen Halaman',
-                    'icon'    => 'fas fa-fw fa-copy',
-                    'icon_color' => 'white',
-                    'can'=> 'isSuperUser',
-                    'url'  => '/management/page', 
-                ],  
-                [
-                    'text'    => 'Manajemen Slide',
-                    'icon'    => 'fas fa-fw fa-images',
-                    'icon_color' => 'white',
-                    'can'=> 'isSuperUser',
-                    'url'  => '/management/slider', 
-                ],  
-                [
-                    'text'    => 'Manajemen Gallery',
-                    'icon'    => 'fas fa-fw fa-images',
-                    'icon_color' => 'green',
-                    'can'=> 'isSuperUser',
-                    'url'  => '/management/gallery', 
-                ],   
-                 
-            ],
-        ], 
-         
-        ['header' => 'ANGGARAN','can' => ["manage-income"]],
-       
-        [
-            'text'    => 'Manajemen Anggaran',
-            'icon'    => 'fas fa-fw fa-credit-card',
-            'label_color' => 'yellow',
-            'can'       => ['manage-income'],
-            'submenu' => [
-                 
-                [
-                    'text'    => 'Pendapatan',
-                    'url'  => '/income',
-                    'icon'  => 'fa  fa-credit-card', 
+                    'text'    => 'Pembelian Asset',
+                    'icon'    => 'fas fa-fw fa-table',
+                    'can' => ['asset-purchase'],
+                    'url'  => '/asset_purchase', 
                 ],
                 [
-                    'text'      => 'Pengeluaran',
-                    'url'       => '/expenditure',
-                    'icon'      => 'fa  fa-credit-card',  
+                    'text'    => 'Distribusi Asset',
+                    'icon'    => 'fas fa-fw fa-table',
+                    'can' => ['asset-distribution'],
+                    'url'  => '/asset_distribution', 
+                ],
+                [
+                    'text'    => 'Maintenance Asset',
+                    'icon'    => 'fas fa-fw fa-table',
+                    'can' => ['asset-maintenance',],
+                    'url'  => '/asset_maintenance', 
                 ],
             ],
         ], 
-        ['header' => 'LAPORAN','can' => ["manage-income"]],
-        [
-            'text'    => 'Manajemen Laporan',
-            'icon'    => 'fas fa-fw fa-copy',
-            'label_color' => 'yellow',
-            'can'       => 'manage-income',
-            'submenu' => [
-                 
-                [
-                    'text'    => 'Pendapatan',
-                    'url'  => '/management/report_in',
-                    'icon'  => 'fa  fa-file', 
-                ],
-                [
-                    'text'      => 'Pengeluaran',
-                    'url'       => '/management/report_out',
-                    'icon'      => 'fa  fa-file',  
-                ],
-            ],
-        ],
-        
+          
         ['header' => 'Copy Right By Taryono S.Kom'],
         
     ],

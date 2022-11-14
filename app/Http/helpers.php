@@ -551,25 +551,7 @@ function DateToIndo($date)
     }
 
     return ($result);
-}
-
-function payment_types_aggreement($number = null)
-{
-    $payment_types = [
-        null => '',
-        1 => say('Down Payment'),
-        2 => "1<sup font-size:8.5px !important'>st</sup> Installment",
-        3 => "2<sup font-size:8.5px !important'>nd</sup> Installment",
-        4 => "3<sup font-size:8.5px !important'>rd</sup> Installment",
-        5 => "4<sup font-size:8.5px !important'>th</sup> Installment",
-        6 => "5<sup font-size:8.5px !important'>th</sup> Installment",
-        7 => "6<sup font-size:8.5px !important'>th</sup> Installment",
-        8 => "7<sup font-size:8.5px !important'>th</sup> Installment",
-        9 => "8<sup font-size:8.5px !important'>th</sup> Installment",
-        10 => "9<sup font-size:8.5px !important'>th</sup> Installment",
-    ];
-    return ($number > 0) ? $payment_types[$number] : $payment_types;
-}
+} 
 
 function numberToMonth($no)
 {
@@ -791,52 +773,8 @@ function jk($j)
     ];
     return $jk[$j];
 }
-
-function skill($i)
-{
-    $skill = [
-        0 => say('Basic'),
-        1 => say('Medium'),
-        2 => say('Intermediate'),
-    ];
-    return $skill[$i];
-}
-
-function unit_casting($unit)
-{
-    return "Unit 0" . (($unit < 2) ? $unit : $unit);
-}
-
-function relation($j)
-{
-    $relation = [
-        '' => '',
-        0 => '',
-        1 => say('Anak Kandung'),
-        2 => say('Anak Angkat'),
-        3 => say('Anak Tiri'),
-        4 => say('Adik'),
-        5 => say('Sepupu'),
-        6 => say('Kakak'),
-        7 => say('Ayah'),
-        8 => say('Ibu'),
-    ];
-    return $relation[$j];
-}
-
-function enquirer_relation($i)
-{
-    $relation = [
-        '' => '',
-        0 => '',
-        1 => say('Ayah'),
-        2 => say('Ibu'),
-        3 => say('Wali'),
-    ];
-    return array_key_exists($i, $relation) ? $relation[$i] : $relation[0];
-}
-
-function religi($j)
+    
+function religion($j)
 {
     $religi = [
         '' => '',
@@ -912,109 +850,7 @@ function status($j)
     ];
     return array_key_exists($j, $status) ? $status[$j] : "Pending";
 }
-
-function hereg_status($j)
-{
-    $status = [
-        1 => "Belum Daftar Ulang",
-        2 => "Sudah Daftar Ulang",
-    ];
-    return array_key_exists($j, $status) ? $status[$j] : "Belum Daftar Ulang";
-}
-
-function hereg_colors($index)
-{
-    $colors = [
-        null => "bg-red",
-        1 => "bg-red",
-        2 => "bg-green",
-        3 => "bg-orange",
-        4 => "bg-red",
-        5 => "bg-green",
-        6 => "bg-orange",
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
-function bg_status($index)
-{
-    $colors = [
-        null => "bg-red",
-        0 => "bg-red",
-        1 => "bg-green",
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
-function student_status($index)
-{
-    $colors = [
-        0 => '<label class="bg-red bg-label">' . say("Not Active (Move)") . '</label>',
-        1 => '<label class="bg-green bg-label">' . say("Active") . '</label>',
-        2 => '<label class="bg-orange bg-label">' . say("Graduate") . '</label>',
-        3 => '<label class="bg-blue bg-label">' . say("On Process Withdrawal") . '</label>',
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
-function installment_status($index)
-{
-    $colors = [
-        null => "bg-red",
-        1 => "bg-blue",
-        2 => "bg-green",
-        3 => "bg-red",
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
-function budget_status($index)
-{
-    $colors = [
-        null => "bg-red",
-        1 => "bg-red",
-        2 => "bg-blue",
-        3 => "bg-green",
-        4 => "bg-red",
-        5 => "bg-green",
-        6 => "bg-orange",
-        7 => "bg-red",
-        8 => "bg-green",
-        10 => "bg-orange",
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
-function new_hereg_colors($index)
-{
-    $colors = [
-        1 => "bg-green",
-        2 => "bg-orange",
-        null => "bg-orange",
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
-function class_type_colors($index)
-{
-    $colors = [
-        null => "bg-blue",
-        1 => "bg-blue",
-        2 => "bg-green",
-        3 => "bg-orange",
-        4 => "bg-red",
-        5 => "bg-yellow-crusta",
-        6 => "bg-purple",
-        7 => "bg-blue",
-        8 => "bg-green",
-        9 => "bg-orange",
-        10 => "bg-red",
-        11 => "bg-yellow-crusta",
-        12 => "bg-purple",
-    ];
-    return array_key_exists($index, $colors) ? $colors[$index] : "bg-purple";
-}
-
+     
 function is_url_exist($url)
 {
     if (is_connected()) {
@@ -1111,12 +947,7 @@ function day($date)
     $day = date('N', strtotime($date));
     return $day;
 }
-
-function feeType($type)
-{
-    $data = [1 => 'flat', 2 => 'procentage', 3 => 'procentage'];
-    return $data[$type];
-}
+ 
 
 function concatDayAndDate($date)
 {
@@ -1180,25 +1011,6 @@ function DateTimeIndo($date)
     return ($result);
 }
 
-function first_name($name)
-{
-    $string = $name;
-    $substring = substr($string, 0, strpos($string, ' '));
-    return $substring;
-}
-
-function search($controller, $key)
-{
-
-    if (Session()->has('filter')) {
-        if (array_key_exists('controller_name', Session()->get('filter'))) {
-            if (strtolower(Session()->get('filter')['controller_name']) == $controller) {
-                return array_key_exists($key, Session()->get('filter')) ? Session()->get('filter')[$key] : null;
-            }
-        }
-    }
-}
-
 function fix_keys($array)
 {
     foreach ($array as $k => $val) {
@@ -1251,16 +1063,7 @@ function thousand($angka)
     $hasil_rupiah = number_format($angka, 0, ',', '.');
     return $hasil_rupiah;
 }
-
-function getTypeGradeCam()
-{
-    $type = array(
-        1 => say("Harian"), say("Mingguan"), say("Bulanan"),
-    );
-
-    return $type;
-}
-
+ 
 function weeks()
 {
     $weeks = [
@@ -1454,54 +1257,7 @@ function replaceString($replaceWith = [], $string = '')
     }
     return $result;
 }
-
-function getQueryLogs($isLogs = false)
-{
-    try {
-        if (env("APP_ENV") == "local") {
-            $input = request()->all();
-            $sql_ = \DB::getQueryLog();
-
-            if (array_key_exists("all_query", $input)) {
-                dump($sql_);
-            }
-
-            if (array_key_exists("index_query", $input)) {
-                $query = $sql_[$input["index_query"]];
-            } else {
-                $query = end($sql_);
-            }
-            if ($query) {
-                if (is_array($query)) {
-                    $sql = $query['query'];
-                    $list = $query['bindings'];
-                    $replace = array_values($list);
-                    $temp = "";
-                    $explode = explode("?", $sql);
-                    foreach ($replace as $key => $value) {
-                        if (is_string($value)) {
-                            $temp .= $explode[$key] . "'" . $value . "'";
-                        } else {
-                            $temp .= $explode[$key] . $value;
-                        }
-                    }
-                    if (array_key_exists("testing", $input)) {
-                        dump($temp);
-                    } else {
-                        if ($isLogs) {
-                            dump($temp);
-                        }
-                    }
-                }
-            }
-        }
-    } catch (\Exception $e) {
-        if (env("APP_ENV") == "local") {
-            dump($e->getMessage(), $e->getLine());
-        }
-    }
-}
-
+ 
 function weekOfMonth($date)
 {
     //Get the first day of the month.
@@ -1574,18 +1330,7 @@ function getFirstName($name)
         }
     }
     return $result_name;
-}
-
-function reduce_array_dimension($array)
-{
-    $keys = [];
-    foreach ($array as $key => $ar) {
-        foreach ($ar as $k => $v) {
-            $keys[$k] = $v;
-        }
-    }
-    return $keys;
-}
+} 
 
 function is_exists($i, $object, $default = null, $set_values = [], $format = null, $color_function = null)
 {
@@ -1683,13 +1428,7 @@ function DateToDayAbsance($date)
     $result = $HariIndo[(int) $hari - 1];
     return ($result);
 }
-
-function __theme($code, $fallback = null)
-{
-    $app_preferences = session()->get('app_preferences');
-    return array_key_exists($code, $app_preferences) ? $app_preferences[$code] : $fallback;
-}
-
+ 
 function dateFormat($date, $client_id = null)
 {
     if ($client_id && $client_id == 43) {
@@ -1719,22 +1458,7 @@ function MonthYear($date)
 
     return ($result);
 }
-
-function isJson($value)
-{
-    return is_object(json_decode($value));
-}
-
-function statusFamilyChild()
-{
-    $statusFamilyChild = [
-        1 => say('Anak Kandung'),
-        2 => say('Anak Angkat'),
-        3 => say('Anak Tiri'),
-    ];
-    return $statusFamilyChild;
-}
-
+ 
 function get_property($object, $property, $default = '')
 {
     if (isset($object)) {

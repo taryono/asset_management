@@ -35,7 +35,7 @@
             width: 500px;
             margin-left: auto;
             margin-right: auto;
-        }
+        } 
     </style>
     {{-- Base Stylesheets --}}
     @if (!config('adminlte.enabled_laravel_mix'))

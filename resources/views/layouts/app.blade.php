@@ -21,7 +21,7 @@
     <style>
         .navbar-search-block .input-group {
             width: 80%;
-        }
+        } 
     </style>
 </head>
 <body>
