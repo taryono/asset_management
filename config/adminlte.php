@@ -267,11 +267,18 @@ return [
             'can'       => ['supplier-index'],
             'url'  => '/supplier',
         ], 
+        [
+            'text'    => 'Manajemen Lokasi',
+            'icon'    => 'fas fa-fw fa-map',
+            'label_color' => 'yellow',
+            'can'       => ['location-index'],
+            'url'  => '/location',
+        ], 
         ['header' => 'MANAJEMEN ASSET', 'can'=> ['asset-index','asset_category-index','asset_type-index', 'asset_status-index']],
         
         [
             'text'    => 'Manajemen Asset',
-            'icon'    => 'fas fa-fw fa-document',
+            'icon'    => 'fas fa-fw fa-home',
             'label_color' => 'yellow',
             'can'       => ['asset-index','asset_category-index','asset_type-index', 'asset_status-index'],
             'submenu' => [ 
