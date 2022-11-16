@@ -6,7 +6,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Daftar Tipe Asset</h3>
+                <h3 class="card-title">Daftar Perusahaan</h3>
                 {!!create(['url'=> route('company.create'), 'title'=> 'Tambah Tipe Asset', 'style'=> "float: right;"]) !!}
               </div>
               <!-- /.card-header -->
@@ -16,7 +16,8 @@
                   <tr>
                     <th data-name="id">No</th> 
                     <th data-name="name">Nama</th>    
-                    <th data-name="bg_color">Warna Background</th>  
+                    <th data-name="email">Email</th>  
+                    <th data-name="company_type.name">Tipe</th>  
                     <th data-name="action">Action</th> 
                   </tr>
                   </thead>
