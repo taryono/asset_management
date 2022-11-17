@@ -587,6 +587,7 @@ function getColumns(table_id, objects = {}) {
 
             if ($(v).attr("data-name")) {
                 if ($(v).attr("data-name") == "id") {
+                    $(v).attr("width","10px")
                     names = {
                         data: "id",
                         render: function(data, type, row, meta) {
@@ -596,6 +597,7 @@ function getColumns(table_id, objects = {}) {
                         searchable: false,
                     };
                 } else if ($(v).attr("data-name") == "action") {
+                    $(v).attr("width","100px")
                     names = {
                         data: "action",
                         name: "action",

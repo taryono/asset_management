@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'position', 'namespace' => 'App\Modules\Position\Controllers', 'middleware' => ['web','admin']], function () {
     Route::get('/', ['as' => 'position.index', 'uses' => 'PositionController@index']);
     Route::get('/getListAjax', ['as' => 'position.getListAjax', 'uses' => 'PositionController@getListAjax']);
-    Route::get('/getListAjaxPeoples', ['as' => 'position.getListAjaxPeoples', 'uses' => 'PositionController@getListAjaxPeoples']);
+    Route::get('/getListAjaxEmployees', ['as' => 'position.getListAjaxEmployees', 'uses' => 'PositionController@getListAjaxEmployees']);
     Route::get('/create', ['as' => 'position.create', 'uses' => 'PositionController@create']);
     Route::get('/show/{id}', ['as' => 'position.show', 'uses' => 'PositionController@show']);    
     Route::get('/preview/{id}', ['as' => 'position.preview', 'uses' => 'PositionController@preview']);    

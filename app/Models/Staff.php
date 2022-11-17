@@ -12,8 +12,8 @@ class Staff extends BasedModel
         return $this->belongsTo(Position::class);
     }
 
-    public function people(){
-        return $this->belongsTo(People::class);
+    public function employee(){
+        return $this->belongsTo(Employee::class);
     }
 
     public function getNameAttribute()

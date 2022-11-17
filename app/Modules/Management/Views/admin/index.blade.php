@@ -42,9 +42,9 @@
                                             aria-controls="custom-tabs-one-users" aria-selected="true">User</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="custom-tabs-one-jamaah-users-tab" data-toggle="pill"
-                                            href="#custom-tabs-one-jamaah-users" role="tab"
-                                            aria-controls="custom-tabs-one-jamaah-users" aria-selected="true">User Jamaah</a>
+                                        <a class="nav-link" id="custom-tabs-one-employee-users-tab" data-toggle="pill"
+                                            href="#custom-tabs-one-employee-users" role="tab"
+                                            aria-controls="custom-tabs-one-employee-users" aria-selected="true">User employee</a>
                                     </li>
                                 </ul>
                             </div>
@@ -70,9 +70,9 @@
                                         aria-labelledby="custom-tabs-one-users-tab">
                                         @include('Management::admin.user')
                                     </div>
-                                    <div class="tab-pane fade show" id="custom-tabs-one-jamaah-users" role="tabpanel"
-                                        aria-labelledby="custom-tabs-one-jamaah-users-tab">
-                                        @include('Management::admin.user_jamaah')
+                                    <div class="tab-pane fade show" id="custom-tabs-one-employee-users" role="tabpanel"
+                                        aria-labelledby="custom-tabs-one-employee-users-tab">
+                                        @include('Management::admin.user_employee')
                                     </div>
                                 </div>
                             </div>

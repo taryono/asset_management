@@ -11,8 +11,8 @@
          {{ Form::select('position_id', \Models\Position::where('type',2)->pluck('name', 'id')->all(),null, ['class' => 'form-control selectpicker', 'id' => 'position_id',"placeholder"=>"Seksi"]) }}  
      </div>
      <div class="form-group">
-         <label for="people_id">Dijabat Oleh</label>
-         {{ Form::select('people_id', \Models\People::pluck('first_name', 'id')->all(),null, ['class' => 'form-control selectpicker', "placeholder"=>"Nama Orang"]) }}  
+         <label for="employee_id">Dijabat Oleh</label>
+         {{ Form::select('employee_id', \Models\Employee::pluck('first_name', 'id')->all(),null, ['class' => 'form-control selectpicker', "placeholder"=>"Nama Orang"]) }}  
      </div>
  </div>
  {{ Form::close() }}

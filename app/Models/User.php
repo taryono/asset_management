@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens; 
 use Models\Page;
-use Models\People;
+use Models\Employee;
 
 class User extends Authenticatable
 {
@@ -128,9 +128,9 @@ class User extends Authenticatable
         return $this->belongsToMany(\Models\Menu::class);
     }
 
-    public function peoples()
+    public function employees()
     {
-        return $this->hasMany(People::class);
+        return $this->hasMany(Employee::class);
     }
 
     public function adminlte_image()

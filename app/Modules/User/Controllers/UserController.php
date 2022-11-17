@@ -37,7 +37,7 @@ class UserController extends MainController
             $users = $this->_model::with(['roles', 'menus'])->whereHas('roles', function ($q) {
                 $q->where('name', '<>', 'superuser');
             })
-                ->doesnthave('peoples')
+                ->doesnthave('employees')
                 ->select('*');
             return datatables()->of($users)
                 ->addIndexColumn()
@@ -72,16 +72,16 @@ class UserController extends MainController
         }
     }
 
-    public function getListJamaahAjax()
+    public function getListemployeeAjax()
     {
         if (request()->ajax()) {
-            $users = $this->_model::with(['roles'])->has('peoples')->select('*');
+            $users = $this->_model::with(['roles'])->has('employees')->select('*');
             return datatables()->of($users)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
                         $btn = '<div class="justify-content-between">';
-                        $btn .= edit(['url' => route('user.edit_jamaah', $row->id), 'title' => $row->name]);
+                        $btn .= edit(['url' => route('user.edit_employee', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('user.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('user.destroy', $row->id), 'preview' => route('user.preview', $row->id), 'title' => $row->name]);
                         $btn .= '</div>';
@@ -124,9 +124,9 @@ class UserController extends MainController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create_jamaah()
+    public function create_employee()
     {
-        return view('User::create_jamaah');
+        return view('User::create_employee');
     }
 
     /**
@@ -149,11 +149,11 @@ class UserController extends MainController
                 $user->roles()->sync($roles);
             }
 
-            if (request()->input('jamaah')) {
-                $people = \Models\People::find(request()->input('people_id'));
-                if ($people) {
-                    $people->user_id = $user->id;
-                    $people->save();
+            if (request()->input('employee')) {
+                $employee = \Models\Employee::find(request()->input('employee_id'));
+                if ($employee) {
+                    $employee->user_id = $user->id;
+                    $employee->save();
                 }
             }
         } catch (\Exception $e) {
@@ -204,10 +204,10 @@ class UserController extends MainController
      * @param  \Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit_jamaah($user_id)
+    public function edit_employee($user_id)
     {
         $user = $this->_model::find($user_id);
-        return view('User::edit_jamaah', ['user' => $user]);
+        return view('User::edit_employee', ['user' => $user]);
     }
 
     /**
@@ -232,16 +232,16 @@ class UserController extends MainController
                 if ($roles) {
                     $user->roles()->sync($roles);
                 }
-                if ($request->input('people_id')) {
-                    $people = \Models\People::find(request()->input('people_id'));
-                    if ($people) {
-                        $people->user_id = $user->id;
-                        $people->save();
+                if ($request->input('employee_id')) {
+                    $employee = \Models\Employee::find(request()->input('employee_id'));
+                    if ($employee) {
+                        $employee->user_id = $user->id;
+                        $employee->save();
                     }
-                    $old_people = \Models\People::where('user_id', $user->id)->first();
-                    if ($old_people->id != $people->id) {
-                        $old_people->user_id = null;
-                        $old_people->save();
+                    $old_employee = \Models\Employee::where('user_id', $user->id)->first();
+                    if ($old_employee->id != $employee->id) {
+                        $old_employee->user_id = null;
+                        $old_employee->save();
                     }
                 }
             }

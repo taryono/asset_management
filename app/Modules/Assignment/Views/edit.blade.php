@@ -35,8 +35,8 @@
                         </div>
                         <div class="form-row">
                             <div class="col-md-6">
-                                <label for="people_id">Dijabat Oleh</label>
-                                {{ Form::select('people_id', \Models\People::pluck('name', 'id')->all(), null, ['class' => 'form-control selectpicker']) }}
+                                <label for="employee_id">Dijabat Oleh</label>
+                                {{ Form::select('employee_id', \Models\Employee::pluck('name', 'id')->all(), null, ['class' => 'form-control selectpicker']) }}
                             </div>
                             <div class="col-md-6">
                                 <label for="sign_by">Ditandatangani Oleh</label>

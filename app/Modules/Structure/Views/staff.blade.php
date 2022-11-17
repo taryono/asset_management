@@ -32,7 +32,7 @@
                                             <tr> 
                                                 
                                                 <th data-name="id">No</th> 
-                                                <th data-name="people.full_name">Nama</th>    
+                                                <th data-name="employee.full_name">Nama</th>    
                                                 <th data-name="position.name">Jabatan</th>
                                                 <th data-name="action">Action</th> 
                                             </tr>

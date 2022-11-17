@@ -15,8 +15,9 @@
                   <thead>
                   <tr>
                     <th data-name="id">No</th> 
-                    <th data-name="name">Nama</th>    
-                    <th data-name="bg_color">Warna Background</th>  
+                    <th data-name="user.name">Nama User</th>    
+                    <th data-name="asset.name">Nama Asset</th>  
+                    <th data-name="location.name">Lokasi Asset</th>  
                     <th data-name="action">Action</th> 
                   </tr>
                   </thead>

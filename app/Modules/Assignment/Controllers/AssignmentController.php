@@ -28,7 +28,7 @@ class AssignmentController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $assignments = $this->_model::with(['structure', 'position', 'people'])->select('*');
+            $assignments = $this->_model::with(['structure', 'position', 'employee'])->select('*');
              
             return datatables()->of($assignments) 
                 ->addColumn('action', function ($row) {
