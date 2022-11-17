@@ -21,8 +21,12 @@
         {{-- Logo --}}
         <div class="{{ $auth_type ?? 'login' }}-logo">
             <a href="{{ $dashboard_url }}">
-                <img src="{{ assets(config('adminlte.logo_img')) }}" height="50">
-                {!! config('adminlte.logo', '<b>Management Asset </b>') !!}
+                <img src="{{ assets(config('adminlte.logo_img')) }}" class="rounded-circle" style="border-radius: 50%!important;
+                height: 160px;
+                width: 100%;
+                position: relative;
+                margin-bottom: -57px;">
+                {{-- {!! config('adminlte.logo', '<b>Management Asset </b>') !!} --}}
             </a>
         </div>
 

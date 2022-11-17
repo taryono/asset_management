@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'staff', 'namespace' => 'App\Modules\Staff\Controllers', 'middleware' => ['web','admin']], function () {
     Route::get('/', ['as' => 'staff.index', 'uses' => 'StaffController@index']);
     Route::get('/getListAjax', ['as' => 'staff.getListAjax', 'uses' => 'StaffController@getListAjax']);
-    Route::get('/getListAjaxPeoples', ['as' => 'staff.getListAjaxPeoples', 'uses' => 'StaffController@getListAjaxPeoples']);
+    Route::get('/getListAjaxEmployees', ['as' => 'staff.getListAjaxEmployees', 'uses' => 'StaffController@getListAjaxEmployees']);
     Route::get('/getListAjaxByStructureId/{structure}', ['as' => 'staff.getListAjaxByStructureId', 'uses' => 'StaffController@getListAjaxByStructureId']);
     
     Route::get('/create', ['as' => 'staff.create', 'uses' => 'StaffController@create']);

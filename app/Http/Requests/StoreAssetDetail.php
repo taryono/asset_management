@@ -25,7 +25,7 @@ class StoreAssetDetail extends FormRequest
     {
         return [
             'name' => 'required',
-            'people_id' => 'required',  
+            'employee_id' => 'required',  
         ];
     }
 
@@ -33,7 +33,7 @@ class StoreAssetDetail extends FormRequest
     {
         return [
             'name.required' => 'Nama harus di isi.',
-            'people_id.required' => 'Nama orang harus di isi.',  
+            'employee_id.required' => 'Nama orang harus di isi.',  
         ];
     }
 }

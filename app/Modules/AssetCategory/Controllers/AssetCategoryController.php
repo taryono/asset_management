@@ -26,7 +26,7 @@ class AssetCategoryController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $asset_categorys = $this->_model::select('*');
+            $asset_categorys = $this->_model::select(['*']);
             return datatables()->of($asset_categorys)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {

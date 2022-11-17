@@ -15,12 +15,12 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <table id="staff" class="table table-bordered table-hover display standard" style="width: 100%" data-route="{{ route('structure.getListAjaxPeoples', $structure->id) }}">
+                                    <table id="staff" class="table table-bordered table-hover display standard" style="width: 100%" data-route="{{ route('structure.getListAjaxEmployees', $structure->id) }}">
                                         <thead>
                                             <tr> 
                                                 
                                                 <th data-name="id">No</th> 
-                                                <th data-name="people.full_name">Nama</th>   
+                                                <th data-name="employee.full_name">Nama</th>   
                                                 <th data-name="structure.name">Nama Kepengurusan</th>  
                                                 <th data-name="position.name">Jabatan</th>
                                                 <th data-name="action">Action</th> 

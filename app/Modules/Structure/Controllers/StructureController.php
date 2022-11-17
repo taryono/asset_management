@@ -50,7 +50,7 @@ class StructureController extends MainController
     public function getListAjaxStaff($structure_id)
     {
         if (request()->ajax()) {
-            $staffs = \Models\Staff::with(['structure', 'people', 'position'])->select('*')->whereHas('structure', function ($query) use ($structure_id) {
+            $staffs = \Models\Staff::with(['structure', 'employee', 'position'])->select('*')->whereHas('structure', function ($query) use ($structure_id) {
                 $query->where('id', $structure_id);
             });
             return datatables()->of($staffs)
@@ -59,7 +59,7 @@ class StructureController extends MainController
                     if ($row) {
                         $btn = '<div class="justify-content-between d-flex mr-5">';
                         $btn .= edit(['url' => route('staff.edit', $row->id), 'title' => $row->name]);
-                        $btn .= show(['url' => route('people.show', $row->people_id), 'title' => $row->people->name]);
+                        $btn .= show(['url' => route('employee.show', $row->employee_id), 'title' => $row->employee->name]);
                         $btn .= hapus(['url' => route('staff.destroy', $row->id), 'preview' => route('staff.preview', $row->id), 'title' => $row->name]);
                         $btn .= '</div>';
                         return $btn;
@@ -71,10 +71,10 @@ class StructureController extends MainController
         }
     }
 
-    public function getListAjaxPeoples($structure_id)
+    public function getListAjaxEmployees($structure_id)
     {
         if (request()->ajax()) {
-            $staffs = \Models\Staff::with(['structure', 'people', 'position'])->select('*')->whereHas('structure', function ($query) use ($structure_id) {
+            $staffs = \Models\Staff::with(['structure', 'employee', 'position'])->select('*')->whereHas('structure', function ($query) use ($structure_id) {
                 $query->where('id', $structure_id);
             });
             return datatables()->of($staffs)

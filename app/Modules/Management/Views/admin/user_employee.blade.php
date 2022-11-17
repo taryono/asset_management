@@ -7,13 +7,13 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Daftar User Jamaah</h3>
-                            {!! create(['url' => route('user.create_jamaah'), 'title' => 'Tambah User', 'style' => 'float: right;']) !!}
+                            <h3 class="card-title">Daftar User employee</h3>
+                            {!! create(['url' => route('user.create_employee'), 'title' => 'Tambah User', 'style' => 'float: right;']) !!}
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="user-jamaah" class="table table-bordered table-hover display standard" style="width: 100%"
-                                data-route="{{ route('user.getListJamaahAjax') }}">
+                            <table id="user-employee" class="table table-bordered table-hover display standard" style="width: 100%"
+                                data-route="{{ route('user.getListemployeeAjax') }}">
                                 <thead>
                                     <tr>
                                         <th data-name="id">No</th>
@@ -47,8 +47,8 @@
 @section('js')
     <script>
         $(function() {
-            $(document).on('change',"#people_id",function(){
-                $.get('/people/getName/'+$(this).val(), function(res){
+            $(document).on('change',"#employee_id",function(){
+                $.get('/employee/getName/'+$(this).val(), function(res){
                     $("#name").val(res);
                 });
             });

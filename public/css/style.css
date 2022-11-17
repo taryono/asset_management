@@ -7,6 +7,14 @@ table.details {
     font-size: 12px;
 }
 
+body {
+    background: url("../icon/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 input:invalid:focus {
     background-image: linear-gradient(rgb(247, 230, 230), rgb(238, 247, 238));
     border: 2px solid red;

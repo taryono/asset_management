@@ -33,33 +33,38 @@ class AuthServiceProvider extends ServiceProvider
             if($user->isSuperUser()){
                 return true;
             } 
-        });    
-      
+        });
+        
         if(Schema::hasTable('menu_role')){   
             $menu_roles = \Models\MenuRole::where(function($q){
                 $q->where('index', 1);
             })->get();
+         
             if($menu_roles->count()){
-                foreach($menu_roles as $menu_role){
+               
+                foreach($menu_roles as $menu_role){                    
                     if(isset($menu_role->menu)){
                         if($menu_role->menu->is_active){ 
-                            $name = ($menu_role->menu->name);
-                            $list_actions = ["index","create", "edit", "show", "print", "destroy"]; 
+                            $name = ($menu_role->menu->name); 
+                            $list_actions = ["index","create", "edit", "show", "print", "destroy"];  
+                            
                             foreach($list_actions as $act){ 
                                 $menu_name = $name."-".$act;  
                                 if($menu_role->{$act}){  
-                                    Gate::define($menu_name, function ($user) use($menu_role){  
-                                        if($user->hasRoleId($menu_role->role_id)){
+                                    $role_id = $menu_role->role_id;
+                                    Gate::define($menu_name, function ($user) use($role_id){  
+                                        if($user->isSuperUser() || $user->hasRoleId($role_id)){
                                             return true;
                                         }
                                         return false;
-                                    }); 
-                                }
+                                    });   
+                                }  
                             } 
-                        }
+                        } 
                     }
-                } 
-            }
+                   
+                }  
+            } 
         }
 
         if(Schema::hasTable('menu_user')){   

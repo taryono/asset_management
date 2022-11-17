@@ -19,7 +19,7 @@
                                          <th data-name="name">Nama</th>
                                          <th data-name="structure.name">Kepengurusan</th>
                                          <th data-name="position.name">Seksi/Bagian</th>
-                                         <th data-name="people.name">Nama Pejabat</th>
+                                         <th data-name="employee.name">Nama Pejabat</th>
                                          <th data-name="sign_by">Ditandatangani Oleh</th>
                                          <th data-name="date">Tanggal Pembuatan SK</th>
                                          <th data-name="action" nowrap="nowrap">Action</th>
