@@ -13,4 +13,8 @@ class AssetDistribution extends BasedModel
      public function location(){
         return $this->belongsTo(Location::class);
      }
+
+     public function asset(){
+      return $this->belongsTo(Asset::class);
+   }
 }

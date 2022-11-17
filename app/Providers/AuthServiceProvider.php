@@ -47,7 +47,7 @@ class AuthServiceProvider extends ServiceProvider
                         if($menu_role->menu->is_active){ 
                             $name = ($menu_role->menu->name); 
                             $list_actions = ["index","create", "edit", "show", "print", "destroy"];  
-
+                            
                             foreach($list_actions as $act){ 
                                 $menu_name = $name."-".$act;  
                                 if($menu_role->{$act}){  
