@@ -7,11 +7,11 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Daftar Asset</h3>  
-                {!!create(['url'=> route('asset.create'), 'title'=> 'Tambah Asset', 'style'=> "float: right;"]) !!}
+                {!!create(['url'=> route('asset.create'), 'title'=> 'Tambah Data Asset', 'style'=> "float: right;"]) !!}
               </div>
               <!-- /.card-header -->
               <div class="card-body"> 
-                <table id="asset" data-filename="Data Asset Mujahiddin" data-title="Data Asset Masjid" class="table table-bordered table-hover display standard" style="width: 100%" data-route="{{ route('asset.getListAjax') }}">
+                <table id="asset" data-filename="Data Asset Masjid" data-title="Data Asset Masjid" class="table table-bordered table-hover display standard" style="width: 100%" data-route="{{ route('asset.getListAjax') }}">
                   <thead>
                   <tr>
                     <th data-name="id">No</th> 

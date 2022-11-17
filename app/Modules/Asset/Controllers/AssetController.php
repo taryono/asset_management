@@ -11,7 +11,7 @@ class AssetController extends MainController
 {
     public function __construct()
     {
-        parent::__construct(new Asset(), 'asset');
+        parent::__construct(new Asset(), 'asset'); 
     }
 
     /**
@@ -48,7 +48,7 @@ class AssetController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('asset.edit', $row->id), 'title' => $row->name]);
                         //$btn .= show(['url'=> route('asset.show',$row->id), 'title'=> $row->name, 'popup'=> true]);
                         $btn .= hapus(['url' => route('asset.destroy', $row->id), 'preview' => route('asset.preview', $row->id), 'title' => $row->name]);

@@ -13,7 +13,7 @@
     @yield('meta_tags')
 
     {{-- Title --}}
-    <title>
+    <title>asds
         @yield('title_prefix', config('adminlte.title_prefix', ''))
         @yield('title', config('adminlte.title', ' Asset Management Systems'))
         @yield('title_postfix', config('adminlte.title_postfix', ''))

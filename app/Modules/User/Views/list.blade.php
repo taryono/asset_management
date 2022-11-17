@@ -13,7 +13,7 @@
                       <!-- /.card-header -->
                       <div class="card-body">
                           <table id="user" class="table table-bordered table-hover display standard" style="width: 100%"
-                              data-route="{{ route('user.getListAjax') }}">
+                              data-route="{{ route('user.getListAjax') }}" data-filename="Data User">
                               <thead>
                                   <tr>
                                       <th data-name="id">No</th>

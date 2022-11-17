@@ -25,7 +25,7 @@ class MainController extends Controller {
         if ($model) {
             View::share('model_name', $this->_model->getTable());
         }
-
+        View::share('title', $this->_controller_name);
         View::share('controller_name', $this->_controller_name);
         Session()->put('controller_name', $controller_name);
         Session()->put('model', $model);
@@ -33,7 +33,7 @@ class MainController extends Controller {
 
     protected function _serialize(Request $request, $model = null, $ignored = []) {
         $model = $model ? $model : $this->_model;
-        $exceptions = ['_method', '_token', 'id', 'password_confirmation','image', 'photo', 'file', 'logo','thumb','cover'];
+        $exceptions = ['_method', '_token', 'id', 'password_confirmation','image', 'photo', 'file', 'logo','thumb','cover', 'password_confirm'];
         
         if($request instanceof Request){
             $data = $request->except($exceptions);            

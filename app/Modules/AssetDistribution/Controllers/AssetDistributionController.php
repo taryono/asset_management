@@ -26,7 +26,7 @@ class AssetDistributionController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $asset_distributions = $this->_model::with(['asset'])->select('*');
+            $asset_distributions = $this->_model::with(['asset','user','location'])->select('*');
             return datatables()->of($asset_distributions)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {

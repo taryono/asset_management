@@ -31,7 +31,7 @@ class PostController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('post.edit', $row->id), 'title' => $row->name, 'type' => 'inline']);
                         $btn .= show(['url' => route('post.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('post.destroy', $row->id), 'preview' => route('post.preview', $row->id), 'title' => $row->name]);

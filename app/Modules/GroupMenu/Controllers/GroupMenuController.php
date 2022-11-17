@@ -31,7 +31,7 @@ class GroupMenuController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('group_menu.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('group_menu.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('group_menu.destroy', $row->id), 'preview' => route('group_menu.preview', $row->id), 'title' => $row->name]);

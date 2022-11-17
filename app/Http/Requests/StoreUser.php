@@ -26,7 +26,7 @@ class StoreUser extends FormRequest
         return [
             'name' => 'required', 
             'email' => 'required|email', 
-            'password' => 'required|password|min:8', 
+            'password' => 'required|min:8', 
             'password_confirm' => 'required|same:password|min:8', 
             'role_id' => 'required', 
         ];
@@ -40,9 +40,9 @@ class StoreUser extends FormRequest
             'role_id.required' => 'Role Harus Pilih Salah Satu', 
             'password.required' => 'Password Harus Diisi', 
             'password.min' => 'Password Harus 8 Atau Lebih Karakter', 
-            'password_confirm.required' => 'Konfirmasi Password Harus Diisi', 
-            'password_confirm.min' => 'Konfirmasi Password Harus 8 Atau Lebih Karakter', 
-            'password_confirm.same' => 'Konfirmasi Password Harus Sama Dengan Password', 
+            //'password_confirm.required' => 'Konfirmasi Password Harus Diisi', 
+            //'password_confirm.min' => 'Konfirmasi Password Harus 8 Atau Lebih Karakter', 
+            //'password_confirm.same' => 'Konfirmasi Password Harus Sama Dengan Password', 
         ];
     }
 }
