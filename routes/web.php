@@ -16,6 +16,10 @@ use Symfony\Component\HttpFoundation\File\File;
 */
 
 Auth::routes();  
+
+Route::get('/', function(){
+    return redirect()->to('/login');
+});
 Route::get('/welcome', [App\Http\Controllers\WelcomeController::class, 'index', 'middleware' => ['guest']])->name('welcome');
 Route::get('/welcome/children', ['as' => 'welcome.children', 'uses' => 'App\Http\Controllers\WelcomeController@children']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

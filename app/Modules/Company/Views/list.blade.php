@@ -17,6 +17,7 @@
                     <th data-name="id">No</th> 
                     <th data-name="name">Nama</th>    
                     <th data-name="email">Email</th>  
+                    <th data-name="website">Website</th>  
                     <th data-name="company_type.name">Tipe</th>  
                     <th data-name="action">Action</th> 
                   </tr>
