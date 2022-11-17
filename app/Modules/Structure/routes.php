@@ -15,7 +15,7 @@ Route::group(['prefix' => 'structure', 'namespace' => 'App\Modules\Structure\Con
     Route::get('/', ['as' => 'structure.index', 'uses' => 'StructureController@index']);
     Route::get('/getListAjax', ['as' => 'structure.getListAjax', 'uses' => 'StructureController@getListAjax']);
     Route::get('/getListAjaxStaff/{structure_id}', ['as' => 'structure.getListAjaxStaff', 'uses' => 'StructureController@getListAjaxStaff']);
-    Route::get('/getListAjaxPeoples/{structure_id}', ['as' => 'structure.getListAjaxPeoples', 'uses' => 'StructureController@getListAjaxPeoples']);
+    Route::get('/getListAjaxEmployees/{structure_id}', ['as' => 'structure.getListAjaxEmployees', 'uses' => 'StructureController@getListAjaxEmployees']);
     Route::get('/create', ['as' => 'structure.create', 'uses' => 'StructureController@create']);
     Route::get('/show/{id}', ['as' => 'structure.show', 'uses' => 'StructureController@show']);    
     Route::get('/preview/{id}', ['as' => 'structure.preview', 'uses' => 'StructureController@preview']);    

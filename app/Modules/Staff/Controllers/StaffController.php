@@ -26,7 +26,7 @@ class StaffController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $staffs = $this->_model::with(['structure', 'people', 'position'])->select('*');
+            $staffs = $this->_model::with(['structure', 'employee', 'position'])->select('*');
             return datatables()->of($staffs)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
@@ -48,7 +48,7 @@ class StaffController extends MainController
     public function getListAjaxByStructureId($structure_id)
     {
         //if (request()->ajax()) {
-        $staffs = $this->_model::with(['position', 'people'])->select('*')->where('structure_id', $structure_id);
+        $staffs = $this->_model::with(['position', 'employee'])->select('*')->where('structure_id', $structure_id);
         return datatables()->of($staffs)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
@@ -67,18 +67,18 @@ class StaffController extends MainController
         //}
     }
 
-    public function getListAjaxPeoples()
+    public function getListAjaxEmployees()
     {
         if (request()->ajax()) {
-            $peoples = \Models\People::with('staff')->has('staff')->select('*');
-            return datatables()->of($peoples)
+            $employees = \Models\Employee::with('staff')->has('staff')->select('*');
+            return datatables()->of($employees)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
                         $btn = '<div class="justify-content-between d-flex mr-5">';
-                        $btn .= edit(['url' => route('people.edit', $row->id), 'title' => $row->name]);
-                        $btn .= show(['url' => route('people.show', $row->id), 'title' => $row->name]);
-                        $btn .= hapus(['url' => route('people.destroy', $row->id), 'preview' => route('people.preview', $row->id), 'title' => $row->name]);
+                        $btn .= edit(['url' => route('employee.edit', $row->id), 'title' => $row->name]);
+                        $btn .= show(['url' => route('employee.show', $row->id), 'title' => $row->name]);
+                        $btn .= hapus(['url' => route('employee.destroy', $row->id), 'preview' => route('employee.preview', $row->id), 'title' => $row->name]);
                         $btn .= '</div>';
                         return $btn;
 

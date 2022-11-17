@@ -16,7 +16,7 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="staff" class="table table-bordered table-hover display standard"
-                                        style="width: 100%" data-route="{{ route('staff.getListAjaxPeoples') }}">
+                                        style="width: 100%" data-route="{{ route('staff.getListAjaxEmployees') }}">
                                         <thead>
                                             <tr>
                                                 <th data-name="id">No</th>

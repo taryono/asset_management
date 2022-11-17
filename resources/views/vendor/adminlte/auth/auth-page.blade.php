@@ -25,8 +25,7 @@
                 height: 160px;
                 width: 100%;
                 position: relative;
-                margin-bottom: -57px;
-                margin-left: -25px;">
+                margin-bottom: -57px;">
                 {{-- {!! config('adminlte.logo', '<b>Management Asset </b>') !!} --}}
             </a>
         </div>

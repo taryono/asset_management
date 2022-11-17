@@ -16,7 +16,7 @@
                                 <div class="card-body">
                                     <table id="position" class="table table-bordered table-hover display standard"
                                         style="width: 100%"
-                                        data-route="{{ route('position.getListAjaxPeoples', ['position_id' => $position->id]) }}">
+                                        data-route="{{ route('position.getListAjaxEmployees', ['position_id' => $position->id]) }}">
                                         <thead>
                                             <tr>
                                                 <th data-name="id">No</th>

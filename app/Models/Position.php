@@ -4,8 +4,8 @@ namespace Models;
 
 class Position extends BasedModel
 {
-    public function people()
+    public function employee()
     {
-        return $this->belongsToMany(People::class);
+        return $this->belongsToMany(Employee::class);
     }
 }

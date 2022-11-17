@@ -1,11 +1,11 @@
  {{ Form::model($user, ['method' => 'PUT', 'route' => ['user.update', $user->id], 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
- {{Form::hidden('jamaah', 1)}}
+ {{Form::hidden('employee', 1)}}
  {{Form::hidden('name', null,['id'=> 'name'])}} 
 
  
  <div class="card-body">
     <div class="form-group"> 
-        {{ Form::select('people_id', Models\People::pluck('name', 'id')->all(), $user->peoples()->first()->id, ['class' => 'form-control selectpicker', 'data-live-search' => 'true', 'data-style' => 'btn-primary', 'id'=> 'people_id']) }}
+        {{ Form::select('employee_id', Models\Employee::pluck('name', 'id')->all(), $user->employees()->first()->id, ['class' => 'form-control selectpicker', 'data-live-search' => 'true', 'data-style' => 'btn-primary', 'id'=> 'employee_id']) }}
      </div> 
      <div class="form-group">  
         {{Form::text('email', null, ["class"=>"form-control", "id"=>"email", "placeholder"=>"Email/Username"])}}

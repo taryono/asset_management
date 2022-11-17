@@ -45,24 +45,24 @@ class PositionController extends MainController
         }
     }
 
-    public function getListAjaxPeoples()
+    public function getListAjaxEmployees()
     {
         if (request()->ajax()) {
-            $peoples = \Models\People::with('address')->select('*');
+            $employees = \Models\Employee::with('address')->select('*');
             if (request()->has('position_id')) {
                 $position_id = request()->input('position_id');
-                $peoples->whereHas('staff', function ($q) use ($position_id) {
+                $employees->whereHas('staff', function ($q) use ($position_id) {
                     $q->where('position_id', $position_id);
                 });
             }
-            return datatables()->of($peoples)
+            return datatables()->of($employees)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
                         $btn = '<div class="justify-content-between d-flex mr-5">';
-                        $btn .= edit(['url' => route('people.edit', $row->id), 'title' => $row->name]);
-                        $btn .= show(['url' => route('people.show', $row->id), 'title' => $row->name]);
-                        $btn .= hapus(['url' => route('people.destroy', $row->id), 'preview' => route('people.preview', $row->id), 'title' => $row->name]);
+                        $btn .= edit(['url' => route('employee.edit', $row->id), 'title' => $row->name]);
+                        $btn .= show(['url' => route('employee.show', $row->id), 'title' => $row->name]);
+                        $btn .= hapus(['url' => route('employee.destroy', $row->id), 'preview' => route('employee.preview', $row->id), 'title' => $row->name]);
                         $btn .= '</div>';
                         return $btn;
 

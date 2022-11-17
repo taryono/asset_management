@@ -1,9 +1,9 @@
  {{ Form::open(['method' => 'POST', 'route' => ['user.store'], 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
- {{Form::hidden('jamaah', 1)}}
+ {{Form::hidden('employee', 1)}}
  {{Form::hidden('name', null,['id'=> 'name'])}} 
  <div class="card-body">
     <div class="form-group"> 
-        {{ Form::select('people_id', Models\People::pluck('name', 'id')->all(), null, ['class' => 'form-control selectpicker', 'data-live-search' => 'true', 'data-style' => 'btn-primary', 'id'=> 'people_id']) }}
+        {{ Form::select('employee_id', Models\Employee::pluck('name', 'id')->all(), null, ['class' => 'form-control selectpicker', 'data-live-search' => 'true', 'data-style' => 'btn-primary', 'id'=> 'employee_id']) }}
      </div> 
      <div class="form-group">  
         {{Form::email('email', null,["class"=>"form-control", "id"=>"email", "placeholder"=>"Email/Username"])}}

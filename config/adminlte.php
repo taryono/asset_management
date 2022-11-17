@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Management Assets',
+    'title' => '',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,13 +45,13 @@ return [
     |
     */
 
-    'logo' => '<b>Management Assets</b>',
+    'logo' => '<b>Asset Management</b>',
     //'logo_img' => 'plugin_vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img' => 'icon/asset-management-systems.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Management Assets',
+    'logo_img_alt' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -244,37 +244,38 @@ return [
             'text' => 'search',
         ],
         
-        ['header' => 'account_settings', 'can'=> ['menu_role-index','menu-index','menu_type-index','user-index','role-index']],
+        ['header' => 'account_settings', 'can'=> ['menu_role-index','menu-index','menu_type-index','user-index','role-index'], 'classes'  => 'btn btn-success text-bold',],
         [
             'text'    => 'Manajemen Admin',
-            'icon'    => 'fas fa-fw fa-cogs',
-            'icon_color' => 'white',
+            'icon'    => 'fas fa-fw fa-users',
+            'icon_color' => 'primary',
             'can'=> 'isSuperUser',
             'url'  => '/management/acl', 
+
         ],   
         
         [
             'text'    => 'Manajemen Perusahaan',
-            'icon'    => 'fas fa-fw fa-cogs',
+            'icon'    => 'fas fa-fw fa-home',
             'label_color' => 'yellow',
             'can'       => ['company-index'],
             'url'  => '/company',
         ], 
         [
             'text'    => 'Manajemen Supplier',
-            'icon'    => 'fas fa-fw fa-cogs',
+            'icon'    => 'fas fa-fw fa-plane',
             'label_color' => 'yellow',
             'can'       => ['supplier-index'],
             'url'  => '/supplier',
         ], 
         [
             'text'    => 'Manajemen Lokasi',
-            'icon'    => 'fas fa-fw fa-map',
+            'icon'    => 'fas fa-fw fa-map-marker',
             'label_color' => 'yellow',
             'can'       => ['location-index'],
             'url'  => '/location',
         ], 
-        ['header' => 'MANAJEMEN ASSET', 'can'=> ['asset-index','asset_category-index','asset_type-index', 'asset_status-index']],
+        ['header' => 'MANAJEMEN ASSET', 'can'=> ['asset-index','asset_category-index','asset_type-index', 'asset_status-index'], 'classes'  => 'btn btn-success text-bold',],
         
         [
             'text'    => 'Manajemen Asset',

@@ -15,7 +15,7 @@
     {{-- Title --}}
     <title>
         @yield('title_prefix', config('adminlte.title_prefix', ''))
-        @yield('title', config('adminlte.title', 'Masjid Mujahidin'))
+        @yield('title', config('adminlte.title', ' Asset Management Systems'))
         @yield('title_postfix', config('adminlte.title_postfix', ''))
     </title>
 

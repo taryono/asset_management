@@ -1,5 +1,5 @@
  {{ Form::model($user, ['method' => 'PUT', 'route' => ['user.update', $user->id], 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
- {{Form::hidden('jamaah', null)}}
+ {{Form::hidden('employee', null)}}
  <div class="card-body">
      <div class="form-group"> 
          {{Form::text('name',null,[ "class"=>"form-control", "id"=>"name", "placeholder"=>"Name"])}}        

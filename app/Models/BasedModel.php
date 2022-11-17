@@ -53,7 +53,7 @@ class BasedModel extends Model
     {
         parent::boot();
         static::saving(function ($model) {
-            if ($model instanceof People) {
+            if ($model instanceof Employee) {
                 $model->name = $model->first_name . " " . $model->last_name;
             }
 
@@ -107,7 +107,7 @@ class BasedModel extends Model
         });
 
         static::updating(function ($model) {
-            if ($model instanceof People) {
+            if ($model instanceof Employee) {
                 $model->name = $model->first_name . " " . $model->last_name;
             }
         });
