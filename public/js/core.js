@@ -497,11 +497,14 @@ function loadData(table_id, objects) {
             {
                 extend: "excel",
                 customize: function(win) {
-                    console.log(this);
+                    console.log(win);
+                    
                 },
                 exportOptions: {
                     columns: getColumnPrint(table_id),
                 },
+                filename: filename,
+                title: title,
             },
             {
                 extend: "reload",
@@ -518,10 +521,13 @@ function loadData(table_id, objects) {
                         .prepend(
                             '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
                         );
+                         
                 },
                 exportOptions: {
                     columns: getColumnPrint(table_id),
                 },
+                filename: filename,
+                title: title,
             },
         ],
         initComplete: function() {

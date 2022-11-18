@@ -4,8 +4,9 @@ namespace App\Modules\Management\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
+use App\Http\Controllers\MainController;
 
-class ManagementController extends Controller
+class ManagementController extends MainController
 {
     /**
      * Display a listing of the resource.

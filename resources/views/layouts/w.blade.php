@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('adminlte.title', 'Masjid Mujahidin') }}</title>
+    <title>{{ config('adminlte.title', 'Asset Management Systems') }}</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('plugin_vendor/fontawesome-free/css/all.min.css') }}">
@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light px-2">
-            <a class="navbar-brand" href="#">{{ config('adminlte.title', 'Masjid Mujahidin') }}</a>
+            <a class="navbar-brand" href="#">{{ config('adminlte.title', 'Asset Management Systems') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

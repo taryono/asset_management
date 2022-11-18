@@ -44,3 +44,8 @@ div.dataTables_processing {
 .help-block {
     font-size: small;
 }
+ 
+th.background_header{
+    background-color: blue;
+    color: black;
+}

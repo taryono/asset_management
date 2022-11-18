@@ -67,7 +67,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-seconday',
     'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => true,
@@ -244,23 +244,22 @@ return [
             'text' => 'search',
         ],
         
-        ['header' => 'account_settings', 'can'=> ['menu_role-index','menu-index','menu_type-index','user-index','role-index'], 'classes'  => 'btn btn-success text-bold',],
+        ['header' => 'account_settings', 'can'=> ['menu_role-index','menu-index','menu_type-index','user-index','role-index'], 'classes'  => 'btn btn-success text-bold'],
         [
             'text'    => 'Manajemen Admin',
             'icon'    => 'fas fa-fw fa-users',
-            'icon_color' => 'primary',
+            'icon_color' => 'secondary',
             'can'=> 'isSuperUser',
             'url'  => '/management/acl', 
 
-        ],   
-        
+        ],  
         [
             'text'    => 'Manajemen Perusahaan',
             'icon'    => 'fas fa-fw fa-home',
             'label_color' => 'yellow',
             'can'       => ['company-index'],
             'url'  => '/company',
-        ], 
+        ],  
         [
             'text'    => 'Manajemen Supplier',
             'icon'    => 'fas fa-fw fa-plane',

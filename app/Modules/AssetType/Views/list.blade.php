@@ -11,7 +11,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="asset_type" class="table table-bordered table-hover display standard" data-route="{{ route('asset_type.getListAjax') }}">
+                <table id="asset_type" class="table table-bordered table-hover display standard" data-filename="Data Asset Masjid" data-route="{{ route('asset_type.getListAjax') }}">
                   <thead>
                   <tr>
                     <th data-name="id">No</th> 

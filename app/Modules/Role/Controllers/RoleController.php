@@ -68,7 +68,7 @@ class RoleController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('role.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('role.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('role.destroy', $row->id), 'preview' => route('role.preview', $row->id), 'title' => $row->name]);

@@ -59,7 +59,7 @@ class AdminController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('admin.edit', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('admin.destroy', $row->id), 'preview' => route('admin.preview', $row->id), 'title' => $row->name]);
                         $btn .= '</div>';

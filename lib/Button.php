@@ -78,9 +78,9 @@ class Button
       if (array_key_exists($this->action, $this->actions)) {
          if ($this->actions[$this->action]) {
             if ($this->type == "popup") {
-               return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="create btn btn-primary btn-sm shadow col-xs-3" data-toggle="modal" data-target="#modalMin" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-plus"></i>&nbsp;' . ($this->text ? $this->text : 'Tambah') . '</a>';
+               return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="create btn btn-primary btn-sm shadow mr-1" data-toggle="modal" data-target="#modalMin" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-plus"></i>&nbsp;' . ($this->text ? $this->text : 'Tambah') . '</a>';
             } else {
-               return '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="btn btn-primary btn-sm shadow" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-plus"></i>&nbsp;' . ($this->text ? $this->text : 'Tambah') . '</a>';
+               return '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="btn btn-primary btn-sm shadow mr-1" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-plus"></i>&nbsp;' . ($this->text ? $this->text : 'Tambah') . '</a>';
             }
          }
       }
@@ -93,9 +93,9 @@ class Button
       if (array_key_exists($this->action, $this->actions)) {
          if ($this->actions[$this->action]) {
             if ($this->type == "popup") {
-               return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="edit btn btn-primary btn-xs shadow" data-toggle="modal" data-target="#modalUpdate" data-title="' . ($this->attributes['title']) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-edit"></i></a>';
+               return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="edit btn btn-primary btn-xs shadow mr-1 shadow mr-1" data-toggle="modal" data-target="#modalUpdate" data-title="' . ($this->attributes['title']) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-edit"></i></a>';
             } else {
-               return '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="btn btn-primary btn-xs shadow" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-edit"></i></a>';
+               return '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="btn btn-primary btn-xs shadow mr-1" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-edit"></i></a>';
             }
          }
       }
@@ -107,9 +107,9 @@ class Button
       $this->sanitize();
       if (array_key_exists($this->action, $this->actions)) {
          if (array_key_exists('popup', $this->attributes)) {
-            return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="show_popup btn btn-primary btn-xs shadow" data-toggle="modal" data-target="#modalPopupDetail" data-title="' . ($this->attributes['title']) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-eye"></i></a>';
+            return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="show_popup btn btn-primary btn-xs shadow mr-1" data-toggle="modal" data-target="#modalPopupDetail" data-title="' . ($this->attributes['title']) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-eye"></i></a>';
          } else {
-            return $this->actions[$this->action] ? '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="detail btn btn-primary btn-xs shadow"  data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-eye"></i></a>' : null;
+            return $this->actions[$this->action] ? '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="detail btn btn-primary btn-xs shadow mr-1"  data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-eye"></i></a>' : null;
          }
       }
    }
@@ -119,7 +119,7 @@ class Button
       $this->setAction('preview');
       $this->sanitize();
       if (array_key_exists($this->action, $this->actions)) {
-         return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="preview btn btn-primary btn-xs shadow" data-toggle="modal" data-target="#modalPopupDetail" data-title="' . ($this->attributes['title']) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-eye"></i></a>';
+         return '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="preview btn btn-primary btn-xs shadow mr-1" data-toggle="modal" data-target="#modalPopupDetail" data-title="' . ($this->attributes['title']) . '"  style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-eye"></i></a>';
       }
    }
 
@@ -128,7 +128,7 @@ class Button
       $this->setAction('print');
       $this->sanitize();
       if (array_key_exists($this->action, $this->actions)) {
-         return $this->actions[$this->action] ? '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="print btn btn-primary btn-sm shadow" target="_blank" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-print"></i></a>' : null;
+         return $this->actions[$this->action] ? '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="print btn btn-primary btn-sm shadow mr-1" target="_blank" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-print"></i></a>' : null;
       }
    }
 
@@ -137,13 +137,13 @@ class Button
       $this->setAction('destroy');
       $this->sanitize();
       if (array_key_exists($this->action, $this->actions)) {
-         return $this->actions[$this->action] ? '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="delete btn btn-danger btn-xs shadow" data-preview="' . (array_key_exists('preview', $this->attributes) ? $this->attributes['preview'] : null) . '" data-toggle="modal" data-target="#modalDelete" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-trash"></i></a>' : null;
+         return $this->actions[$this->action] ? '<a data-href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="delete btn btn-danger btn-xs shadow mr-1" data-preview="' . (array_key_exists('preview', $this->attributes) ? $this->attributes['preview'] : null) . '" data-toggle="modal" data-target="#modalDelete" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-trash"></i></a>' : null;
       }
    }
 
    public function back()
    {
-      return '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="btn btn-danger btn-sm shadow" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-arrow-left"></i>' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : ($this->text ? $this->text : 'Kembali')) . '</a>';
+      return '<a href="' . (array_key_exists('url', $this->attributes) ? $this->attributes['url'] : null) . '" class="btn btn-danger btn-sm shadow mr-1" data-title="' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : null) . '" style="' . (array_key_exists('style', $this->attributes) ? $this->attributes['style'] : null) . '"><i class="fa fa-sm fa-fw fa-arrow-left"></i>' . (array_key_exists('title', $this->attributes) ? $this->attributes['title'] : ($this->text ? $this->text : 'Kembali')) . '</a>';
    }
 
    public function submit()

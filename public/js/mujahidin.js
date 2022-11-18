@@ -10,6 +10,10 @@ $(function() {
 
     $(document).on('click', 'button.create,button.edit,button.delete-button,button.submit-button,button.update-button', function(e) {
         e.preventDefault();
+        var title = $(this).attr("data-tile");
+        var old_title= $("div#modalMin").attr("title");
+        console.log(title)
+        $("div#modalMin").attr('title',old_title +" "+title);
         if ($(this).hasClass('create')) {
             $.ajax({
                 url: $(this).attr('data-href'),
