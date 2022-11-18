@@ -1,6 +1,4 @@
 @extends('adminlte::page') 
 @section('content')
-    <div id="container">
-        @include('Location::list')
-    </div> 
+@include('Location::list')
 @stop
