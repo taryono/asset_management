@@ -9,13 +9,10 @@
             color: white;
             cursor: pointer;
         }
-
     </style>
 @endpush
 @section('content')
-    <div id="container">
-        @include('Menu::list')
-    </div>
+    @include('Menu::list')
     @push('js')
         <script>
             $(function() {
@@ -28,7 +25,7 @@
                         $("table#menu tr.detail-" + id).remove();
                     } else {
                         $('<tr role="row" class="detail-' + id + '"><th colspan="7"></th></tr>').insertAfter(
-                        tr);
+                            tr);
                         $.ajax({
                             url: $(this).attr("data-href"),
                             type: "GET",

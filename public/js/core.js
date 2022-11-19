@@ -157,6 +157,7 @@ function readURL(input, target) {
         var size = input.files[0].size;
         var extensions = ["jpeg", "png", "jpg", "gif", "svg"];
         let text_message = "";
+        console.log(target)
         var img = $("div." + (target ? target : "post-review") + " img").attr(
             "src"
         );
@@ -212,10 +213,12 @@ $(function() {
         }
     }
 
-    $("input.post-input").change(function() {
+    $(document).on("change", "input.post-input", function() {
         var target = $(this).data("target");
+        console.log(target)
         readURL(this, target);
     });
+    
     $(document).on("keydown", ".amount", function(e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if (

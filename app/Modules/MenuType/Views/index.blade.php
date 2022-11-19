@@ -1,8 +1,6 @@
 @extends('adminlte::page') 
 @section('content')
-    <div id="container">
-      @include('MenuType::list')
-    </div>
+@include('MenuType::list')
     @push('js')  
         <script>
             $(function() { 

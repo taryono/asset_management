@@ -5,9 +5,7 @@
 @stop
 
 @section('content')
-<div id="container">
     @include('Admin::list')
-</div> 
 @stop
 
 

@@ -1,13 +1,50 @@
 {{ Form::open(['method' => 'POST', 'route' => ['asset_maintenance.store'], 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
 <div class="card-body">
     <div class="row">
-        {!! text_div('name', ['class' => 'form-control', 'placeholder' => 'Nama', 'required', 'id'=> 'name']) !!}
-        {!! color_div('bg_color', [
+        {!! select_div(
+            'asset_id',
+            ['class' => 'form-control selectpicker', 'placeholder' => 'Nama Asset', 'required', 'id' => 'name'],
+            null,
+            \Models\Asset::pluck('name', 'id')->all(),
+        ) !!}
+        {!! tanggal_div('start', [
             'class' => 'form-control',
-            'id' => 'bg_color',
-            'placeholder' => 'Background Color',
+            'id' => 'start',
+            'placeholder' => 'Tanggal Servis',
             'required',
-        ]) !!} 
+        ]) !!}
+        {!! tanggal_div('end', [
+            'class' => 'form-control',
+            'id' => 'end',
+            'placeholder' => 'Tanggal Pengambilan',
+            'required',
+        ]) !!}
+        {!! textarea_div('actions', [
+            'class' => 'form-control',
+            'id' => 'actions',
+            'placeholder' => 'Tindakan',
+            'required',
+            'rows'=> '3'
+        ]) !!}
+        {!! text_div('cost', [
+            'class' => 'form-control amount',
+            'id' => 'cost',
+            'placeholder' => 'Biaya Servis',
+            'required',
+        ]) !!}
+        {!! select_div(
+            'supplier_id',
+            ['class' => 'form-control', 'placeholder' => 'Suplier', 'required', 'id' => 'name'],
+            null,
+            \Models\Supplier::pluck('name', 'id')->all(),
+        ) !!}
+        {!! textarea_div('description', [
+            'class' => 'form-control',
+            'id' => 'description',
+            'placeholder' => 'Keterangan',
+            'required',
+            'rows'=> '3'
+        ]) !!}
     </div>
 </div>
-    {{ Form::close() }}
+{{ Form::close() }}

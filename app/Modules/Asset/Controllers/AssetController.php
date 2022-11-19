@@ -60,8 +60,8 @@ class AssetController extends MainController
             })->orderColumn('subtotal', function ($row) {
                 return $row->orderBy("amount", 'desc');
             })->addColumn('photo', function ($row) {
-                $image = $row->photo?asset('storage/assets/'.$row->photo):asset('assets/images/no_image.jpg');
-                return  '<img src="'.($image).'" width="100px" height="100px">';
+                $image = ($row->photo && file_exists(asset('storage/assets/'.$row->photo)))?asset('storage/assets/'.$row->photo):asset('assets/images/no_image.jpg');
+                return  '<img src="'.($image).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="100px">';
             })
                 ->rawColumns(['action', 'subtotal','photo'])
                 ->make(true);

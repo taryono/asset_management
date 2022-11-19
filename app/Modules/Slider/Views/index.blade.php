@@ -1,6 +1,4 @@
-@extends('adminlte::page') 
+@extends('adminlte::page')
 @section('content')
- <div id="container">
-     @include('Slider::list')
- </div> 
- @stop
+    @include('Slider::list')
+@stop
