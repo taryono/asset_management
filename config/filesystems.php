@@ -68,14 +68,15 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('images') => storage_path('app/images'),
-        public_path('logo') => storage_path('app/logo'),
-        public_path('photo') => storage_path('app/photos'),
-        public_path('assets') => storage_path('app/assets'),
-        public_path('nota') => storage_path('app/nota'),
-        public_path('avatar') => storage_path('app/avatars'),
-        public_path('gallery') => storage_path('app/galleries'),
-        public_path('album') => storage_path('app/albums'),
+        public_path('storage/images') => storage_path('app/public/images'),
+        public_path('storage/logos') => storage_path('app/public/logo'),
+        public_path('storage/photos') => storage_path('app/public/photos'),
+        public_path('storage/assets') => storage_path('app/public/assets'),
+        public_path('storage/nota') => storage_path('app/public/nota'),
+        public_path('storage/avatars') => storage_path('app/public/avatars'),
+        public_path('storage/galleries') => storage_path('app/public/galleries'),
+        public_path('storage/albums') => storage_path('app/public/albums'),
+        public_path('storage/sliders') => storage_path('app/public/sliders'),
     ],
 
 ];

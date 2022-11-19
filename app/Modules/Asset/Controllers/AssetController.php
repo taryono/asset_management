@@ -12,6 +12,7 @@ class AssetController extends MainController
     public function __construct()
     {
         parent::__construct(new Asset(), 'asset'); 
+        $this->asset_storage = storage_path('app/public/assets');
     }
 
     /**
@@ -60,8 +61,8 @@ class AssetController extends MainController
             })->orderColumn('subtotal', function ($row) {
                 return $row->orderBy("amount", 'desc');
             })->addColumn('photo', function ($row) {
-                $image = ($row->photo && file_exists(asset('storage/assets/'.$row->photo)))?asset('storage/assets/'.$row->photo):asset('assets/images/no_image.jpg');
-                return  '<img src="'.($image).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="100px">';
+                 
+                return  '<img src="'.(url('/assets',$row->photo)).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="100px">';
             })
             ->addColumn('asset_type', function ($row) {
                  return is_exists("name", $row->asset_type, '-', null,null, true);
@@ -105,8 +106,8 @@ class AssetController extends MainController
                     $file = request()->file('photo');
                     // image upload in storage/app/public/assets
                   
-                    $info = File::storeLocalFile($file, File::createLocalDirectory(storage_path('app/public/assets')));
-                    if ($asset->photo && file_exists(storage_path('app/public/assets/' . $asset->photo))) {
+                    $info = File::storeLocalFile($file, File::createLocalDirectory($this->asset_storage));
+                    if ($asset->photo && file_exists(url('/assets', $asset->photo))) {
                         unlink(storage_path('app/public/assets/' . $asset->photo));
                     }
                     $asset->photo = $info->getFilename();
@@ -179,9 +180,9 @@ class AssetController extends MainController
                     if (request()->file('photo')->isValid()) {
                         $file = request()->file('photo');
                         // image upload in storage/app/public/photo
-                        $info = File::storeLocalFile($file, File::createLocalDirectory(storage_path('app/public/assets')));
-                        if ($asset->photo && file_exists(storage_path('app/public/assets/' . $asset->photo))) {
-                            unlink(storage_path('app/public/photos/' . $asset->photo));
+                        $info = File::storeLocalFile($file, File::createLocalDirectory($this->asset_storage));
+                        if ($asset->photo && file_exists(url('/assets' . $asset->photo))) {
+                            unlink(storage_path('app/public/assets/' . $asset->photo));
                         }
                         $asset->photo = $info->getFilename();
                         $asset->save();
