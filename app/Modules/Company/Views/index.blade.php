@@ -1,4 +1,4 @@
-@extends('adminlte::page') 
+@extends('adminlte::page')
 @section('content')
-@include('Company::list')
+    @include('Company::list')
 @stop

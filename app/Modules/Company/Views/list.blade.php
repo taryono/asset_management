@@ -12,7 +12,12 @@
           <tr>
             <th data-name="id">No</th> 
             <th data-name="name">Nama</th>    
-            <th data-name="bg_color" nowrap="nowrap">Warna Background</th> 
+            <th data-name="phone" nowrap="nowrap">No. Telp</th> 
+            <th data-name="cellphone" nowrap="nowrap">No. Hp</th> 
+            <th data-name="email" nowrap="nowrap">Email</th> 
+            <th data-name="website" nowrap="nowrap">Website</th> 
+            <th data-name="company_type" nowrap="nowrap"> Status </th> 
+            <th data-name="address" nowrap="nowrap">Alamat</th>  
             <th data-name="action">Action</th> 
           </tr>
           </thead>

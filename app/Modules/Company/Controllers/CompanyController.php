@@ -38,12 +38,9 @@ class CompanyController extends MainController
                         return $btn;
 
                     }
-                })->addColumn('bg_color', function ($row) {
+                })->addColumn('company_type', function ($row) {
                     if ($row) {
-                        $btn = '<span class="btn" style="background-color:'.$row->bg_color.'">';
-                         
-                        $btn .= '</span>';
-                        return $btn;
+                        return is_exists("name", $row->company_type);
                     }
                 })
                 ->rawColumns(['action','bg_color'])
