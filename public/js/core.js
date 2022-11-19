@@ -623,7 +623,7 @@ function getColumns(table_id, objects = {}) {
                             names = {
                                 data: $(v).attr("data-name"),
                                 render: function(row, data) {
-                                    return "Rp. " + rupiah(row);
+                                    return "Rp. " + number(row);
                                 },
                             };
                         } else if ($(v).attr("data-format") == "date") {

@@ -45,10 +45,15 @@ div.help-block {
 }
 
 thead {
-    background-color: #403d3d;
+    background-color: #151617;
     color: white;
 }
 
 tr.odd {
     background-color: #ebf3ef;
+}
+
+img {
+    border-radius: 10px;
+    text-shadow: 5px 5px #69706f;
 }

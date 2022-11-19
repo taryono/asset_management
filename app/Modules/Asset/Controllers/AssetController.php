@@ -42,7 +42,7 @@ class AssetController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $assets = $this->_model::with(['asset_type', 'asset_status', 'asset_category']);
+            $assets = $this->_model::select(['*']);
 
             return datatables()->of($assets)
                 ->addIndexColumn()
@@ -63,7 +63,15 @@ class AssetController extends MainController
                 $image = ($row->photo && file_exists(asset('storage/assets/'.$row->photo)))?asset('storage/assets/'.$row->photo):asset('assets/images/no_image.jpg');
                 return  '<img src="'.($image).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="100px">';
             })
-                ->rawColumns(['action', 'subtotal','photo'])
+            ->addColumn('asset_type', function ($row) {
+                 return is_exists("name", $row->asset_type, '-', null,null, true);
+            })
+            ->addColumn('asset_status', function ($row) {
+                return is_exists("name", $row->asset_status, '-', null,null, true);
+            })->addColumn('asset_category', function ($row) {
+                return is_exists("name", $row->asset_category, '-', null,null, true);
+            })
+                ->rawColumns(['action', 'subtotal','photo','asset_type','asset_status','asset_category'])
                 ->make(true);
         }
     }

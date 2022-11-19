@@ -13,7 +13,7 @@
             <th data-name="id">No</th> 
             <th data-name="asset.name">Nama</th>     
             <th data-name="actions">Tindakan</th> 
-            <th data-name="cost" nowrap="nowrap">Biaya Servis</th> 
+            <th data-name="cost" nowrap="nowrap" data-format="money">Biaya Servis</th> 
             <th data-name="supplier.name">Supplier</th> 
             <th data-name="start" data-format="date" nowrap="nowrap">Tanggal Servis</th> 
             <th data-name="end" data-format="date" nowrap="nowrap">Tanggal Pengambilan</th> 

@@ -26,7 +26,7 @@ class CompanyController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $companys = $this->_model::select('*');
+            $companys = $this->_model::select('*')->with(['company_type']);
             return datatables()->of($companys)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {

@@ -13,9 +13,9 @@
             <th data-name="id">No</th> 
             <th data-name="name" nowrap="nowrap">Nama</th>    
             <th data-name="photo">Image</th>
-            <th data-name="asset_type.name" nowrap="nowrap">Status</th>
-            <th data-name="asset_status.name" nowrap="nowrap">kondisi</th>
-            <th data-name="asset_category.name" nowrap="nowrap">Kategori</th>
+            <th data-name="asset_type" nowrap="nowrap">Status</th>
+            <th data-name="asset_status" nowrap="nowrap">kondisi</th>
+            <th data-name="asset_category" nowrap="nowrap">Kategori</th>
             <th data-name="amount">Jumlah</th>
             <th data-name="price" data-format="money">Harga</th>
             <th data-name="subtotal">Subtotal</th>

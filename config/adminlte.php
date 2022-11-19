@@ -278,7 +278,7 @@ return [
         
         [
             'text'    => 'Manajemen Asset',
-            'icon'    => 'fas fa-fw fa-home',
+            'icon'    => 'fas fa-fw fa-file',
             'label_color' => 'yellow',
             'can'       => ['asset-index','asset_category-index','asset_type-index', 'asset_status-index'],
             'submenu' => [ 
