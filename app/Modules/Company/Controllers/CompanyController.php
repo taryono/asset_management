@@ -26,7 +26,7 @@ class CompanyController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $companys = $this->_model::select('*');
+            $companys = $this->_model::select('*')->with(['company_type']);
             return datatables()->of($companys)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
@@ -38,12 +38,9 @@ class CompanyController extends MainController
                         return $btn;
 
                     }
-                })->addColumn('bg_color', function ($row) {
+                })->addColumn('company_type', function ($row) {
                     if ($row) {
-                        $btn = '<span class="btn" style="background-color:'.$row->bg_color.'">';
-                         
-                        $btn .= '</span>';
-                        return $btn;
+                        return is_exists("name", $row->company_type);
                     }
                 })
                 ->rawColumns(['action','bg_color'])

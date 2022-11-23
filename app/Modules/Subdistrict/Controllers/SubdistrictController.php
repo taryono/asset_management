@@ -34,7 +34,7 @@ class SubdistrictController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('subdistrict.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('subdistrict.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('subdistrict.destroy', $row->id), 'preview' => route('subdistrict.preview', $row->id), 'title' => $row->name]);

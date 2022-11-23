@@ -44,7 +44,7 @@ class MenuRoleController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('menu_role.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('menu_role.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('menu_role.destroy', $row->id), 'preview' => route('menu_role.preview', $row->id), 'title' => $row->name]);

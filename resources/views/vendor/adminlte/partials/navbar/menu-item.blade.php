@@ -46,6 +46,6 @@
     @include('adminlte::partials.navbar.menu-item-link')
 
 @endif
-<form name="Tick">
+{{-- <form name="Tick">
     <input type="text" size="12" name="Clock" style="font-weight: bold;text-align: center" readonly>
-</form>
+</form> --}}

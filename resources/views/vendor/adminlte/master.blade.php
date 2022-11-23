@@ -13,9 +13,9 @@
     @yield('meta_tags')
 
     {{-- Title --}}
-    <title>
+    <title>{{isset($title)?$title:"Asset Management Systems"}}
         @yield('title_prefix', config('adminlte.title_prefix', ''))
-        @yield('title', config('adminlte.title', 'Masjid Mujahidin'))
+        @yield('title', config('adminlte.title', 'Asset Management Systems'))
         @yield('title_postfix', config('adminlte.title_postfix', ''))
     </title>
     

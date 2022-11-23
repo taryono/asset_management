@@ -1,3 +1,1 @@
- <div id="container">
-     @include('Controller::list')
- </div> 
+@include('Controller::list')

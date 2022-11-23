@@ -26,7 +26,7 @@ class AssetMaintenanceController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $asset_maintenances = $this->_model::select('*');
+            $asset_maintenances = $this->_model::with(['asset','supplier'])->select('*');
             return datatables()->of($asset_maintenances)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {

@@ -31,7 +31,7 @@ class SupplierController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-1">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('supplier.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('supplier.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('supplier.destroy', $row->id), 'preview' => route('supplier.preview', $row->id), 'title' => $row->name]);

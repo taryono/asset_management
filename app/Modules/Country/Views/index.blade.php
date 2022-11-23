@@ -2,7 +2,5 @@
  
 @section('plugins.DateRangePicker', true)
 @section('content')
-    <div id="container">
-        @include('Country::list')
-    </div> 
+@include('Country::list')
 @stop

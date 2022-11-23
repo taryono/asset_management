@@ -7,8 +7,8 @@ table.details {
     font-size: 12px;
 }
 
-body { 
-    background: url("../icon/bg.jpg") no-repeat center center fixed; 
+body {
+    background: url("../icon/bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -43,4 +43,14 @@ div.dataTables_processing {
 
 .help-block {
     font-size: small;
+}
+ 
+th.background_header{
+    background-color: blue;
+    color: black;
+}
+
+.container-fluid {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

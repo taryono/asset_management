@@ -1,7 +1,5 @@
 @extends('adminlte::page')
  
 @section('content')
-    <div id="container">
-        @include('Attribute::list')
-    </div> 
+@include('Attribute::list')
 @stop

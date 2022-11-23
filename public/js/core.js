@@ -157,6 +157,7 @@ function readURL(input, target) {
         var size = input.files[0].size;
         var extensions = ["jpeg", "png", "jpg", "gif", "svg"];
         let text_message = "";
+        console.log(target)
         var img = $("div." + (target ? target : "post-review") + " img").attr(
             "src"
         );
@@ -196,8 +197,7 @@ function readURL(input, target) {
 }
 
 $(function() {
-    show();
-
+    
     $('a[data-toggle="pill"]').on("shown.bs.tab", function(e) {
         $($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();
     });
@@ -212,10 +212,12 @@ $(function() {
         }
     }
 
-    $("input.post-input").change(function() {
+    $(document).on("change", "input.post-input", function() {
         var target = $(this).data("target");
+        console.log(target)
         readURL(this, target);
     });
+    
     $(document).on("keydown", ".amount", function(e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if (
@@ -497,11 +499,14 @@ function loadData(table_id, objects) {
             {
                 extend: "excel",
                 customize: function(win) {
-                    console.log(this);
+                    console.log(win);
+                    
                 },
                 exportOptions: {
                     columns: getColumnPrint(table_id),
                 },
+                filename: filename,
+                title: title,
             },
             {
                 extend: "reload",
@@ -518,10 +523,13 @@ function loadData(table_id, objects) {
                         .prepend(
                             '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
                         );
+                         
                 },
                 exportOptions: {
                     columns: getColumnPrint(table_id),
                 },
+                filename: filename,
+                title: title,
             },
         ],
         initComplete: function() {
@@ -614,7 +622,7 @@ function getColumns(table_id, objects = {}) {
                             names = {
                                 data: $(v).attr("data-name"),
                                 render: function(row, data) {
-                                    return "Rp. " + rupiah(row);
+                                    return "Rp. " + number(row);
                                 },
                             };
                         } else if ($(v).attr("data-format") == "date") {
@@ -691,23 +699,4 @@ function getColumnDropDownSearch(table_id) {
         return el > 0;
     });
     return filtered;
-}
-
-function show() {
-    var Digital = new Date();
-    var hours = Digital.getHours();
-    var minutes = Digital.getMinutes();
-    var seconds = Digital.getSeconds();
-    var dn = "AM";
-    if (hours > 12) {
-        dn = "PM";
-        hours = hours - 12;
-    }
-    if (hours == 0) hours = 12;
-    if (minutes <= 9) minutes = "0" + minutes;
-    if (seconds <= 9) seconds = "0" + seconds;
-
-    document.Tick.Clock.value =
-        hours + ":" + minutes + ":" + seconds + " " + dn;
-    setTimeout("show()", 1000);
-}
+} 

@@ -1,64 +1,62 @@
 @extends('adminlte::page')
 @section('content')
-    <div id="container">
-        {{ Form::model($post, ['method' => 'PUT', 'route' => ['post.update', $post->id], 'class' => 'form-horizontal inline', 'enctype' => 'multipart/form-data']) }}
-        <div class="card" style="margin-top: 10px;">
-            <div class="card-header">
-                <div class="card-title">
-                    <h1>Edit Postingan</h1>
-                </div>
-                <div style="float: right">
-                    {!! submit(['style' => 'float:right;margin-right: 5px;margin-left: 5px;']) !!}
-                    {!! kembali(['url' => route('management.post'), 'style' => 'float:right;margin-right: 5px;margin-left: 5px;']) !!}
-                </div>
+    {{ Form::model($post, ['method' => 'PUT', 'route' => ['post.update', $post->id], 'class' => 'form-horizontal inline', 'enctype' => 'multipart/form-data']) }}
+    <div class="card" style="margin-top: 10px;">
+        <div class="card-header">
+            <div class="card-title">
+                <h1>Edit Postingan</h1>
             </div>
+            <div style="float: right">
+                {!! submit(['style' => 'float:right;margin-right: 5px;margin-left: 5px;']) !!}
+                {!! kembali(['url' => route('management.post'), 'style' => 'float:right;margin-right: 5px;margin-left: 5px;']) !!}
+            </div>
+        </div>
 
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            {{ Form::text('title', null, ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'Judul', 'required']) }}
-                        </div> 
-                        <div class="form-group">
-                            <label for="post_status_id">Status</label>
-                            {{ Form::select('post_status_id', \Models\PostStatus::pluck('name', 'id')->all(), null, ['class' => 'form-control', 'id' => 'post_status_id', 'placeholder' => '--Pilih Status Publish--', 'required']) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="publish_date">Tanggal Publish</label>
-                            {{ Form::date('publish_date', $post->publish_date, ['class' => 'form-control datepicker', 'id' => 'publish_date', 'placeholder' => 'Tanggal Publish', 'data-language' => 'en', 'data-multiple-tables' => 3, 'data-multiple-tables-separator' => ',', 'data-position' => 'top left', 'required']) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="meta">Meta</label>
-                            {{ Form::text('meta', null, ['class' => 'form-control', 'id' => 'meta', 'placeholder' => 'Meta Blog', 'required']) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="author">Author</label>
-                            {{ Form::text('author', null, ['class' => 'form-control', 'id' => 'author', 'placeholder' => 'Pengarang', 'required']) }}
-                        </div> 
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        {{ Form::text('title', null, ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'Judul', 'required']) }}
                     </div>
-                    <div class="col-lg-8">
-                        <div class="form-group">
-                            <label for="content">Content</label>
-                            {{ Form::textarea('content', null, ['class' => 'form-control text-editor', 'id' => 'content', 'placeholder' => 'Content', 'rows' => '1000']) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="written_by">Penulis</label>
-                            {{ Form::text('written_by', $user->name, ['class' => 'form-control', 'id' => 'written_by', 'placeholder' => 'Penulis', 'readonly' => 'readonly']) }}
-                        </div>
+                    <div class="form-group">
+                        <label for="post_status_id">Status</label>
+                        {{ Form::select('post_status_id', \Models\PostStatus::pluck('name', 'id')->all(), null, ['class' => 'form-control', 'id' => 'post_status_id', 'placeholder' => '--Pilih Status Publish--', 'required']) }}
+                    </div>
+                    <div class="form-group">
+                        <label for="publish_date">Tanggal Publish</label>
+                        {{ Form::date('publish_date', $post->publish_date, ['class' => 'form-control datepicker', 'id' => 'publish_date', 'placeholder' => 'Tanggal Publish', 'data-language' => 'en', 'data-multiple-tables' => 3, 'data-multiple-tables-separator' => ',', 'data-position' => 'top left', 'required']) }}
+                    </div>
+                    <div class="form-group">
+                        <label for="meta">Meta</label>
+                        {{ Form::text('meta', null, ['class' => 'form-control', 'id' => 'meta', 'placeholder' => 'Meta Blog', 'required']) }}
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        {{ Form::text('author', null, ['class' => 'form-control', 'id' => 'author', 'placeholder' => 'Pengarang', 'required']) }}
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-lg-12">
-
+                <div class="col-lg-8">
+                    <div class="form-group">
+                        <label for="content">Content</label>
+                        {{ Form::textarea('content', null, ['class' => 'form-control text-editor', 'id' => 'content', 'placeholder' => 'Content', 'rows' => '1000']) }}
+                    </div>
+                    <div class="form-group">
+                        <label for="written_by">Penulis</label>
+                        {{ Form::text('written_by', $user->name, ['class' => 'form-control', 'id' => 'written_by', 'placeholder' => 'Penulis', 'readonly' => 'readonly']) }}
                     </div>
                 </div>
             </div>
         </div>
-        {{ Form::close() }}
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+        </div>
     </div>
+    {{ Form::close() }}
     @push('js')
         <script>
             $(function() {

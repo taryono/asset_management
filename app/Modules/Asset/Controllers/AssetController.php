@@ -11,7 +11,8 @@ class AssetController extends MainController
 {
     public function __construct()
     {
-        parent::__construct(new Asset(), 'asset');
+        parent::__construct(new Asset(), 'asset'); 
+        $this->asset_storage = storage_path('app/public/assets');
     }
 
     /**
@@ -42,13 +43,13 @@ class AssetController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $assets = $this->_model::with(['asset_type', 'asset_status', 'asset_category']);
+            $assets = $this->_model::select(['*']);
 
             return datatables()->of($assets)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('asset.edit', $row->id), 'title' => $row->name]);
                         //$btn .= show(['url'=> route('asset.show',$row->id), 'title'=> $row->name, 'popup'=> true]);
                         $btn .= hapus(['url' => route('asset.destroy', $row->id), 'preview' => route('asset.preview', $row->id), 'title' => $row->name]);
@@ -60,10 +61,18 @@ class AssetController extends MainController
             })->orderColumn('subtotal', function ($row) {
                 return $row->orderBy("amount", 'desc');
             })->addColumn('photo', function ($row) {
-                $image = $row->photo?asset('storage/assets/'.$row->photo):asset('assets/images/no_image.jpg');
-                return  '<img src="'.($image).'" width="100px" height="100px">';
+                 
+                return  '<img src="'.(url('/assets',$row->photo)).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="100px">';
             })
-                ->rawColumns(['action', 'subtotal','photo'])
+            ->addColumn('asset_type', function ($row) {
+                 return is_exists("name", $row->asset_type, '-', null,null, true);
+            })
+            ->addColumn('asset_status', function ($row) {
+                return is_exists("name", $row->asset_status, '-', null,null, true);
+            })->addColumn('asset_category', function ($row) {
+                return is_exists("name", $row->asset_category, '-', null,null, true);
+            })
+                ->rawColumns(['action', 'subtotal','photo','asset_type','asset_status','asset_category'])
                 ->make(true);
         }
     }
@@ -97,8 +106,8 @@ class AssetController extends MainController
                     $file = request()->file('photo');
                     // image upload in storage/app/public/assets
                   
-                    $info = File::storeLocalFile($file, File::createLocalDirectory(storage_path('app/public/assets')));
-                    if ($asset->photo && file_exists(storage_path('app/public/assets/' . $asset->photo))) {
+                    $info = File::storeLocalFile($file, File::createLocalDirectory($this->asset_storage));
+                    if ($asset->photo && file_exists(url('/assets', $asset->photo))) {
                         unlink(storage_path('app/public/assets/' . $asset->photo));
                     }
                     $asset->photo = $info->getFilename();
@@ -171,9 +180,9 @@ class AssetController extends MainController
                     if (request()->file('photo')->isValid()) {
                         $file = request()->file('photo');
                         // image upload in storage/app/public/photo
-                        $info = File::storeLocalFile($file, File::createLocalDirectory(storage_path('app/public/assets')));
-                        if ($asset->photo && file_exists(storage_path('app/public/assets/' . $asset->photo))) {
-                            unlink(storage_path('app/public/photos/' . $asset->photo));
+                        $info = File::storeLocalFile($file, File::createLocalDirectory($this->asset_storage));
+                        if ($asset->photo && file_exists(url('/assets' . $asset->photo))) {
+                            unlink(storage_path('app/public/assets/' . $asset->photo));
                         }
                         $asset->photo = $info->getFilename();
                         $asset->save();

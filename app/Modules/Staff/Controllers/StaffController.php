@@ -31,7 +31,7 @@ class StaffController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('staff.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('staff.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('staff.destroy', $row->id), 'preview' => route('staff.preview', $row->id), 'title' => $row->name]);
@@ -53,7 +53,7 @@ class StaffController extends MainController
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
                 if ($row) {
-                    $btn = '<div class="justify-content-between d-flex mr-5">';
+                    $btn = '<div class="d-flex mr-1">';
                     $btn .= edit(['url' => route('staff.edit', $row->id), 'title' => $row->name]);
                     $btn .= show(['url' => route('staff.show', $row->id), 'title' => $row->name]);
                     $btn .= hapus(['url' => route('staff.destroy', $row->id), 'preview' => route('staff.preview', $row->id), 'title' => $row->name]);
@@ -75,7 +75,7 @@ class StaffController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-5">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('employee.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('employee.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('employee.destroy', $row->id), 'preview' => route('employee.preview', $row->id), 'title' => $row->name]);

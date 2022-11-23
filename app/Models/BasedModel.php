@@ -20,7 +20,9 @@ class BasedModel extends Model
             // 1) get all table column 
             //  $columns = array_except( Schema::getColumnListing($this->table), $this->guarded);
             // 2) get fillable column
-            $columns = $this->fillable;
+            if(count($this->fillable) > 0){
+                $columns = $this->fillable;
+            }
         }
 
         $query->where(function ($query) use ($keyword, $columns, $relationMapping) {

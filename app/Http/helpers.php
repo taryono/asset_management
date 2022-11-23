@@ -1400,12 +1400,12 @@ function is_exists($i, $object, $default = null, $set_values = [], $format = nul
             if (is_array($color_function)) {
                 /** this will take bg label from assigned array */
                 $bg = array_key_exists($index, $color_function) ? $color_function[$index] : "bg-green";
-                $result = '<span class="' . $bg . ' bg-label">' . $result . '</span>';
+                $result = '<span class="badge"  style="background-color:' . $bg . ';color:white;font-weight:bold;">' . $result . '</span>';
             } else {
                 /** this will take bg label from helper function by key */
                 if (function_exists($color_function)) {
                     $bg = $color_function($index);
-                    $result = '<span class="' . $bg . ' bg-label">' . $result . '</span>';
+                    $result = '<span class="badge" style="background-color:' . $bg . ';color:white;font-weight:bold;">' . $result . '</span>';
                 }
             }
         }
@@ -1543,8 +1543,8 @@ function textarea_div($name, $attributtes, $value = null)
 }
 
 function bg_color($object, $text)
-{
-    return '<span class="' . ($object->bg_label ? $object->bg_label : 'bg-green') . ' bg-label">' . ($text ? $text : $object->name) . '</span>';
+{    
+    return '<span class="badge" style="background-color:' . ($object->bg_color ? $object->bg_color:"green").';color:white;font-weight:bold;">' . ($text ? $text : $object->name) . '</span>';
 }
 
 function is_true($bool, $true, $false, $bg_color = null)
@@ -1554,7 +1554,7 @@ function is_true($bool, $true, $false, $bg_color = null)
 
     if ($bg_color) {
         if (is_array($bg_color)) {
-            $result = '<span class="' . $bg_color[$bool] . ' bg-label">' . $result . '</span>';
+            $result = '<span class="badge" style="background-color:' . $bg_color[$bool] . ';color:white;font-weight:bold;">' . $result . '</span>';
         } else {
             if(is_callable($bg_color)){
                 $result = $bg_color($bool);
@@ -1563,7 +1563,7 @@ function is_true($bool, $true, $false, $bg_color = null)
                 if (function_exists($bg_color)) {
                     $result = $bg_color($bool);
                 } else {
-                    $result = $bool ? '<span class="bg-green bg-label">' . $result . '</span>' : '<span class="bg-red bg-label">' . $result . '</span>';
+                    $result = $bool ? '<span class="badge" style="background-color:green;color:white;font-weight:bold;">' . $result . '</span>' : '<span class="badge"  style="background-color:red;color:white;font-weight:bold;">' . $result . '</span>';
                 }
             }
         }
@@ -1605,4 +1605,4 @@ function select_data($relations, $object, $excepts = [], $options = [])
 
     }
     return $array;
-}
+} 

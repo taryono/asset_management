@@ -1,7 +1,4 @@
-@extends('adminlte::page') 
+@extends('adminlte::page')
 @section('content')
-    <div id="container">
-        @include('Role::list_menu')
-    </div>
-     
+    @include('Role::list_menu')
 @stop

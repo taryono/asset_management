@@ -48,7 +48,7 @@ return [
     'logo' => '<b>Asset Management</b>',
     //'logo_img' => 'plugin_vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img' => 'icon/asset-management-systems.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img_class' => 'brand-image-logo img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => '',
@@ -67,7 +67,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => true,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-seconday',
     'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => true,
@@ -244,23 +244,22 @@ return [
             'text' => 'search',
         ],
         
-        ['header' => 'account_settings', 'can'=> ['menu_role-index','menu-index','menu_type-index','user-index','role-index'], 'classes'  => 'btn btn-success text-bold',],
+        ['header' => 'account_settings', 'can'=> ['menu_role-index','menu-index','menu_type-index','user-index','role-index'], 'classes'  => 'btn btn-success text-bold'],
         [
             'text'    => 'Manajemen Admin',
             'icon'    => 'fas fa-fw fa-users',
-            'icon_color' => 'primary',
+            'icon_color' => 'secondary',
             'can'=> 'isSuperUser',
             'url'  => '/management/acl', 
 
-        ],   
-        
+        ],  
         [
             'text'    => 'Manajemen Perusahaan',
             'icon'    => 'fas fa-fw fa-home',
             'label_color' => 'yellow',
             'can'       => ['company-index'],
             'url'  => '/company',
-        ], 
+        ],  
         [
             'text'    => 'Manajemen Supplier',
             'icon'    => 'fas fa-fw fa-plane',
@@ -279,7 +278,7 @@ return [
         
         [
             'text'    => 'Manajemen Asset',
-            'icon'    => 'fas fa-fw fa-home',
+            'icon'    => 'fas fa-fw fa-file',
             'label_color' => 'yellow',
             'can'       => ['asset-index','asset_category-index','asset_type-index', 'asset_status-index'],
             'submenu' => [ 

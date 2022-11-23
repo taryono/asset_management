@@ -28,7 +28,7 @@
     <div class="form-group">
         <label for="file">Gambar Asset</label>
         <input type="file" class="form-control post-input" id="photo" name="photo" value="{{ old('photo') }}"
-            placeholder="Upload Photo" data-target="post-review2">
+            placeholder="Upload Photo" data-target="post-review">
     </div>
     <div class="form-group"> 
         {{Form::textarea('description', old('description'), ['class'=> 'form-control', 'placeholder'=> "keterangan", "rows"=> 3, 'required'])}}        

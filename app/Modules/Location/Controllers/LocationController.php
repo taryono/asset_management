@@ -31,7 +31,7 @@ class LocationController extends MainController
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     if ($row) {
-                        $btn = '<div class="justify-content-between d-flex mr-1">';
+                        $btn = '<div class="d-flex mr-1">';
                         $btn .= edit(['url' => route('location.edit', $row->id), 'title' => $row->name]);
                         $btn .= show(['url' => route('location.show', $row->id), 'title' => $row->name]);
                         $btn .= hapus(['url' => route('location.destroy', $row->id), 'preview' => route('location.preview', $row->id), 'title' => $row->name]);

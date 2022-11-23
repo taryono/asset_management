@@ -139,10 +139,11 @@ class UserController extends MainController
     {
         try {
             $input = $this->_serialize($request); 
+            
             if (request()->input('password')) {
                 $input['password'] = Hash::make(request()->input('password'));
             }
-            
+             
             $user = $this->_model::create($input);
             $roles = \Models\Role::find(request()->role_id);
             if ($roles) {
@@ -223,6 +224,7 @@ class UserController extends MainController
             $user = $this->_model::find($user_id);
             if ($user) {
                 $input = $this->_serialize($request);
+                
                 if (request()->input('password')) {
                     $input['password'] = Hash::make(request()->input('password'));
                 }
