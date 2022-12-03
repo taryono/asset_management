@@ -11,8 +11,11 @@
           <thead>
           <tr>
             <th data-name="id">No</th> 
-            <th data-name="name">Nama</th>    
-            <th data-name="bg_color" nowrap="nowrap">Warna Background</th> 
+            <th data-name="name">Nama</th>  
+            <th data-name="supplier">Supplier</th>  
+            <th data-name="date" nowrap="nowrap">Tanggal Pembelian</th> 
+            <th data-name="qty" nowrap="nowrap">Jumlah</th> 
+            <th data-name="price" nowrap="nowrap" data-format="money">Harga</th> 
             <th data-name="action">Action</th> 
           </tr>
           </thead>

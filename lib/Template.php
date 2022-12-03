@@ -13,12 +13,26 @@ class Template
     protected $required = "required";
     protected $disabled = "disabled";
     protected $data = null;
+    protected $type = 'text';
 
     public function __construct($name,$attributtes = [], $value = null)
     { 
         $this->name = $name;
         $this->attributtes = $attributtes;
         $this->value = $value;
+    }
+
+    public function setParams($params)
+    {   $this->name = data_get($params,0, null);
+        
+        if($this->type == "select"){
+            $this->value = data_get($params,2, null);
+            $this->data = data_get($params,1, []);
+            $this->attributtes = data_get($params,3, []);
+        }else{
+            $this->value = data_get($params,1, null);
+            $this->attributtes = data_get($params,2, []);
+        } 
     }
 
     public function setAttributes($attributtes)
@@ -86,7 +100,7 @@ class Template
         return $types;
     }
 
-    public function formGroup($type = "text")
+    public function formGroup($type = "text", $values = [], $label = false)
     {   
         $label = "";
         if(array_key_exists("label", $this->getAttributes())){
@@ -97,10 +111,24 @@ class Template
 
         } 
         
-        $template = '<div class="col-lg-12"><div class="form-group">'; 
-        $template .= '<label for="'.$this->name.'">'.$label.'</label>';
-        $template .= $this->$type();
-        $template .= '</div></div>';
+        $template = '<div class="col-lg-12">';
+        $template .=     '<div class="form-group">'; 
+        if($label){
+            $template .= '<label for="'.$this->name.'">'.$label.'</label>';
+        }
+        if($values){
+            $template .= '<br>';
+            foreach($values as $key => $v){
+                $this->value = $key ;
+                $template .= $this->$type(). $v. "&nbsp;";
+            }
+        }else{
+            $template .= $this->$type();
+        }
+        
+
+        $template .=    '</div>';
+        $template .= '</div>';
         
         return $template;
     }

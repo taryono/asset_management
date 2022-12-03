@@ -7,13 +7,13 @@
             null,
             \Models\Asset::pluck('name', 'id')->all(),
         ) !!}
-        {!! tanggal_div('start', [
+        {!! date_div('start', [
             'class' => 'form-control',
             'id' => 'start',
             'placeholder' => 'Tanggal Servis',
             'required',
         ]) !!}
-        {!! tanggal_div('end', [
+        {!! date_div('end', [
             'class' => 'form-control',
             'id' => 'end',
             'placeholder' => 'Tanggal Pengambilan',

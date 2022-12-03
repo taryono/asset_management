@@ -48,7 +48,9 @@ class MenuController extends MainController
     {
         if (request()->ajax()) {
 
-            $menus = $this->_model::with(['parent'])->leftJoin('menus as parent', function ($q) {$q->on('parent.id', '=', 'menus.parent_id');})->select(['menus.*', 'parent.name as parent_name']);
+            $menus = $this->_model::with(['parent'])->where('menus.is_publish', 1)
+            ->leftJoin('menus as parent', function ($q) {$q->on('parent.id', '=', 'menus.parent_id');})
+            ->select(['menus.*', 'parent.name as parent_name']);
 
             return datatables()->of($menus)
                 ->addIndexColumn()

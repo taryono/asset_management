@@ -24,8 +24,7 @@ class StoreAssetPurchase extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required', 
-            'description' => 'required', 
+            'name' => 'required',  
         ];
     }
 
@@ -37,8 +36,7 @@ class StoreAssetPurchase extends FormRequest
     public function messages()
     { 
         return [
-            'name.required' => 'Nama harus disisi', 
-            'description.required' => 'Keterangan harus disisi', 
+            'name.required' => 'Nama harus disisi',  
         ];
     }
 }

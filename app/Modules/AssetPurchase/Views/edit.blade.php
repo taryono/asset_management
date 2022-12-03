@@ -2,12 +2,7 @@
 <div class="card-body">
     <div class="row">
         {!! text_div('name', ['class' => 'form-control', 'placeholder' => 'Nama', 'required', 'id' => 'name']) !!}
-        {!! text_div('price', [
-            'class' => 'form-control amount',
-            'id' => 'price',
-            'placeholder' => 'Harga Asset',
-            'required',
-        ]) !!}
+        
         {!! select_div(
             'supplier_id',
             [
@@ -19,10 +14,22 @@
             $asset_purchase->supplier_id,
             \Models\Supplier::pluck('name', 'id')->all(),
         ) !!}
+        {!! date_div('date', [
+            'class' => 'form-control amount',
+            'id' => 'date',
+            'placeholder' => 'Tanggal Beli',
+            'required',
+        ]) !!}
         {!! text_div('qty', [
             'class' => 'form-control amount',
             'id' => 'qty',
             'placeholder' => 'Jumlah',
+            'required',
+        ]) !!}
+         {!! text_div('price', [
+            'class' => 'form-control amount',
+            'id' => 'price',
+            'placeholder' => 'Harga',
             'required',
         ]) !!}
     </div>

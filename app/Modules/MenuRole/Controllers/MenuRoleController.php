@@ -27,9 +27,12 @@ class MenuRoleController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $query_roles = $this->_model::with(['role', 'menu'])->select('menu_role.*')->leftJoin('roles', function ($q) {
+            $query_roles = $this->_model::with(['role', 'menu'])->select('menu_role.*')
+            ->leftJoin('roles', function ($q) {
                 $q->on('roles.id', '=', 'menu_role.role_id');
-            });
+            })->leftJoin('menus', function ($q) {
+                $q->on('menus.id', '=', 'menu_role.menu_id');
+            })->where('menus.is_publish', 1);
 
             if (request()->has('role_id')) {
                 $query_roles->where('roles.id', request()->input('role_id'));

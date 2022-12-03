@@ -14,11 +14,11 @@
                             href="#custom-tabs-one-menu" role="tab" aria-controls="custom-tabs-one-menu"
                             aria-selected="true">Modul</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" id="custom-tabs-one-menu_type-tab" data-toggle="pill"
                             href="#custom-tabs-one-menu_type" role="tab"
                             aria-controls="custom-tabs-one-menu_type" aria-selected="true">Tipe Menu</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" id="custom-tabs-one-role-tab" data-toggle="pill"
                             href="#custom-tabs-one-role" role="tab"
