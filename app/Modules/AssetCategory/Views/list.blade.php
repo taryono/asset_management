@@ -7,7 +7,7 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <table id="asset_category" class="table table-bordered table-hover display standard" data-route="{{ route('asset_category.getListAjax') }}">
+        <table id="asset_category" class="table table-bordered table-hover display standard" data-route="{{ route('asset_category.getListAjax') }}" width="100%">
           <thead>
           <tr>
             <th data-name="id">No</th> 

@@ -1475,21 +1475,16 @@ function getRangeFormat($params)
     $first_date = $explode[0];
     $end_date = $explode[1];
     return [date('Y-m-d', strtotime($first_date)), date('Y-m-d', strtotime($end_date))];
-}
-
-function textDiv(){
-
-    dd(\Str::snake(__FUNCTION__));
-}
+} 
 
 function text(...$params)
 {  
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->text();
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->text();
 }
 
 function number(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->number();
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->number();
 }
 
 function tanggal(...$params)
@@ -1504,32 +1499,42 @@ function select(...$params)
 
 function color(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->colour();
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->colour();
 }
 
 function textarea(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->textarea();
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->textarea();
 }
 
 function checkbox(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->checkbox();
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->checkbox();
 }
 
 function text_div(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup();
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup();
+}
+
+function email_div(...$params)
+{
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup('email');
+}
+
+function password_div(...$params)
+{
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup('password');
 }
 
 function number_div(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup("number");
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, null), data_get($params,2, null)))->formGroup("number");
 }
 
 function date_div(...$params)
-{
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup("tanggal");
+{   
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup("date");
 }
 
 function select_div(...$params)
@@ -1539,22 +1544,31 @@ function select_div(...$params)
 
 function color_div(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup("colour");
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup("colour");
 }
 
 function textarea_div(...$params)
 {
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup("textarea");
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup("textarea");
 }
 
 function radio_div(...$params)
 {   
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup("radio",data_get($params,3, []), true);    
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup("radio",data_get($params,3, []), true);    
 }
 
 function checkbox_div(...$params)
 {   
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->formGroup("checkbox", data_get($params,3, []), true);    
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup("checkbox", data_get($params,3, []), true);    
+}
+
+function form($type, ...$params)
+{   
+    if($type == "select"){
+        return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->setData(data_get($params,2, []))->formGroup($type);
+    }
+
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, null)))->formGroup($type, data_get($params,3, []), true);    
 }
 
 function bg_color($object, $text)
@@ -1620,5 +1634,4 @@ function select_data($relations, $object, $excepts = [], $options = [])
 
     }
     return $array;
-} 
- 
+}

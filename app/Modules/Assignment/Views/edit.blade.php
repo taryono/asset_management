@@ -1,7 +1,4 @@
-@extends('adminlte::page')
-@section('content')
-
-    {{ Form::model($assignment, ['method' => 'PUT', 'route' => ['assignment.update', $assignment->id], 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
+{{ Form::model($assignment, ['method' => 'PUT', 'route' => ['assignment.update', $assignment->id], 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
     <div class="card" style="margin-top: 10px;">
         <div class="card-header">
             <div class="card-title">
@@ -120,4 +117,3 @@
             });
         </script>
     @endpush
-@stop

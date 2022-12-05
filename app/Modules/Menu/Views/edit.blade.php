@@ -24,7 +24,7 @@
      </div>
      <div class="form-group">
          <label for="parent">Parent</label>
-         {{ Form::select('parent_id', Models\Menu::pluck('name', 'id')->all(), null, ['class' => 'form-control selectpicker', 'id' => 'parent_id', 'placeholder' => 'Pilih Parent', 'data-style' => 'btn-success']) }}
+         {{ Form::select('parent_id', $menus, null, ['class' => 'form-control selectpicker', 'id' => 'parent_id', 'placeholder' => 'Pilih Parent', 'data-style' => 'btn-success']) }}
      </div>
      <div class="form-group">
          <label for="parent">Role</label>

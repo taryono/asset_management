@@ -1,4 +1,1 @@
-@extends('adminlte::page') 
-@section('content')
-    @include('AssetStatus::list')
-@stop
+@include('AssetStatus::list')

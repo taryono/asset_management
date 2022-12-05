@@ -62,7 +62,7 @@ class AssetController extends MainController
                 return $row->orderBy("amount", 'desc');
             })->addColumn('photo', function ($row) {
                  
-                return  '<img src="'.(url('/assets',$row->photo)).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="100px">';
+                return  '<img src="'.(url('/assets',$row->photo)).'" onerror="this.src='.asset("assets/images/no_image.jpg").'" width="100px" height="80px">';
             })
             ->addColumn('asset_type', function ($row) {
                  return is_exists("name", $row->asset_type, '-', null,null, true);

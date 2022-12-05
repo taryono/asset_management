@@ -1,5 +1,3 @@
-@extends('adminlte::page')  
-@section('content') 
 <div class="row">
     <div class="col-12 col-sm-12">
         <div class="card card-secondary card-tabs">
@@ -35,4 +33,3 @@
         </div>
     </div>
 </div>
-@endsection

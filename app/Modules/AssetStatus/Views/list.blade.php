@@ -9,10 +9,10 @@
         <table id="asset_status" class="table table-bordered table-hover display standard" style="width: 100%" data-route="{{ route('asset_status.getListAjax') }}">
           <thead>
             <tr>
-              <th data-name="id">No</th> 
-              <th data-name="name">Nama</th>   
-              <th data-name="bg_color" nowrap="nowrap">Warna Background</th> 
-              <th data-name="action">Action</th> 
+              <td data-name="id">No</td> 
+              <td data-name="name">Nama</td>   
+              <td data-name="bg_color" nowrap="nowrap">Warna Background</td> 
+              <td data-name="action">Action</td> 
             </tr>
           </thead>
           <tbody>

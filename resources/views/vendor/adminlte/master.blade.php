@@ -98,16 +98,16 @@
     @section('plugins.Sweetalert2', true) 
     {{-- Base Scripts --}}
     @if (!config('adminlte.enabled_laravel_mix'))
-        <script src="{{ asset('plugin_vendor/jquery/jquery.min.js') }}"></script>
-        <script src="{{ asset('plugin_vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('plugin_vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugin_vendor/jquery/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugin_vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugin_vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
         
         {{-- Configured Scripts --}}
         @include('adminlte::plugins', ['type' => 'js'])
 
-        <script src="{{ asset('plugin_vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugin_vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
     @else
-        <script src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
+        <script type="text/javascript" src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
     @endif
 
     {{-- Livewire Script --}}
@@ -119,17 +119,17 @@
         @endif
     @endif
     @auth
-    <script src="{{ asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('plugins/jquery-validation/additional-methods.min.js') }}"></script>
-    <script src="{{ asset('plugins/jquery-validation/localization/messages_id.min.js') }}"></script>
-    <script src="{{ asset('plugins/summernote/summernote.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.form.js') }}"></script>
-    <script src="{{ asset('js/mujahidin.js') }}"></script>
-    <script src="{{ asset('js/core.js') }}" defer></script>
-    <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script> 
-    <script src="{{ asset('js/ui-notific8.js') }}"></script> 
-    <script src="{{ asset('js/ui-toastr.min.js') }}"></script> 
-    <script src="{{ asset('js/message.js') }}"></script> 
+    <script type="text/javascript" src="{{ asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/jquery-validation/additional-methods.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/jquery-validation/localization/messages_id.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/summernote/summernote.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.form.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/mujahidin.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/core.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('plugins/toastr/toastr.min.js') }}"></script> 
+    <script type="text/javascript" src="{{ asset('js/ui-notific8.js') }}"></script> 
+    <script type="text/javascript" src="{{ asset('js/ui-toastr.min.js') }}"></script> 
+    <script type="text/javascript" src="{{ asset('js/message.js') }}"></script> 
   
     @endauth
     {{-- Custom Scripts --}}

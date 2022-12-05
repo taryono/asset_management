@@ -363,7 +363,7 @@ return [
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css',
                 ],
     
@@ -374,7 +374,7 @@ return [
                 ],
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => 'plugin_vendor/datatables/js/dataTables.bootstrap4.min.js',
                 ],
                 [
@@ -389,7 +389,7 @@ return [
                 ],
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => 'plugin_vendor/datatables-plugins/buttons/js/buttons.bootstrap4.min.js',
                 ],
                 [
@@ -419,12 +419,12 @@ return [
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => 'plugin_vendor/datatables-plugins/buttons/css/buttons.bootstrap4.min.css',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => 'plugin_vendor/datatables-plugins/select/css/select.bootstrap4.min.css',
                 ],
                 [
@@ -434,7 +434,7 @@ return [
                 ],
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => 'plugin_vendor/datatables-plugins/select/js/select.bootstrap4.js',
                 ],
             ],

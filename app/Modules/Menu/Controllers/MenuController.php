@@ -48,7 +48,7 @@ class MenuController extends MainController
     {
         if (request()->ajax()) {
 
-            $menus = $this->_model::with(['parent'])->where('menus.is_publish', 1)
+            $menus = $this->_model::with(['parent'])->where('menus.is_publish', 1)->where('menus.is_active', 1)
             ->leftJoin('menus as parent', function ($q) {$q->on('parent.id', '=', 'menus.parent_id');})
             ->select(['menus.*', 'parent.name as parent_name']);
 
@@ -172,6 +172,8 @@ class MenuController extends MainController
     public function show($menu_id)
     {
         $menu = $this->_model::find($menu_id);
+       
+
         return view('Menu::show', ['menu' => $menu]);
     }
 
@@ -208,7 +210,10 @@ class MenuController extends MainController
     public function edit($menu_id)
     {
         $menu = $this->_model::find($menu_id);
-        return view('Menu::edit', ['menu' => $menu]);
+        $menus = $this->_model::with(['parent'])->where('menus.is_publish', 1)->where('menus.is_active', 1)
+        ->leftJoin('menus as parent', function ($q) {$q->on('parent.id', '=', 'menus.parent_id');})
+        ->select(['menus.*', 'parent.name as parent_name'])->pluck('name','id')->all();
+        return view('Menu::edit', ['menu' => $menu, 'menus' => $menus]);
     }
 
     /**

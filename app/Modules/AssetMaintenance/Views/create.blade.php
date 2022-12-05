@@ -3,7 +3,7 @@
     <div class="row">
         {!! select_div(
             'asset_id',
-            ['class' => 'form-control selectpicker', 'placeholder' => 'Nama Asset', 'required', 'id' => 'name'],
+            ['class' => 'form-control selectpicker', 'placeholder' => 'Nama Asset', 'required', 'id' => 'asset_id'],
             null,
             \Models\Asset::pluck('name', 'id')->all(),
         ) !!}

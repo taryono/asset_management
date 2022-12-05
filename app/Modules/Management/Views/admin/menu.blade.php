@@ -1,22 +1,10 @@
-@push('css')
-    <style>
-        .toggle-vis {
-            background-color: #6c757d;
-            padding: 5px;
-            border-radius: 20px;
-            color: white;
-            cursor: pointer;
-        }
-
-    </style>
-@endpush
+ 
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Daftar Modul</h3>  
             </div>
-
             <!-- /.card-header -->
             <div class="card-body"> 
                 <table id="menu" class="table table-bordered table-hover display standard" style="width: 100%"

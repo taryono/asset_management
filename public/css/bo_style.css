@@ -67,3 +67,11 @@ img {
     max-height: 33px;
     width: auto;
 }
+
+span.badge {
+    padding: 10px;
+}
+
+.card {
+    margin-top: 10px;
+}

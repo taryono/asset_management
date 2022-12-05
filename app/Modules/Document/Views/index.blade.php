@@ -1,25 +1,4 @@
-@extends('layouts.table')
-
-@section('content_table')
-    <div class="title-table">
-        <h3>{{ $title }}</h3>
-    </div>
-
-    <div id="container" ng-controller="containerController">
-        @include('Document::list')
-    </div>
-
-@section('styles')
-    @parent
-    <link rel="stylesheet" href="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.css') }}">
-@stop
-
-@section('scripts')
-    @parent
-    <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-@stop
-<script src="{{ asset('assets/js/autocomplete.js') }}"></script>
-
+@include('Document::list')
 <script>
     $(document).ready(function() {
 
@@ -74,5 +53,4 @@
             }
         });
     });
-</script>
-@endsection
+</script> 
