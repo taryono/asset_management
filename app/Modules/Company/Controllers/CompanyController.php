@@ -10,7 +10,7 @@ class CompanyController extends MainController
 {
     public function __construct()
     {
-        parent::__construct(new company(), 'company');
+        parent::__construct(new company(), 'company'); 
     }
 
     /**
@@ -19,7 +19,10 @@ class CompanyController extends MainController
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        if (!request()->ajax()) { 
+            return redirect()->to('/');
+        }
         return view('Company::index');
     }
 

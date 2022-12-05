@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Daftar Akses</h3> 
+         
         {!!create(['url'=> route('menu_role.create'), 'title'=> 'Tambah Akses', 'style'=> "float: right;"]) !!}
         
       </div>

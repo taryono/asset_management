@@ -20,6 +20,9 @@ class AssetPurchaseController extends MainController
      */
     public function index()
     {
+        if (!request()->ajax()) { 
+            return redirect()->to('/');
+        }
         return view('AssetPurchase::index');
     }
 

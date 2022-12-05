@@ -20,6 +20,9 @@ class AssetTypeController extends MainController
      */
     public function index()
     {
+        if (!request()->ajax()) { 
+            return redirect()->to('/');
+        }
         return view('AssetType::index');
     }
 

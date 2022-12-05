@@ -2,7 +2,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Daftar Tipe Asset</h3>
+        <h3 class="card-title">Tipe Asset</h3>
         {!!create(['url'=> route('asset_type.create'), 'title'=> 'Tambah Tipe Asset', 'style'=> "float: right;"]) !!}
       </div>
       <!-- /.card-header -->

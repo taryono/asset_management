@@ -83,7 +83,8 @@ class MenuController extends MainController
                 }
             })->addColumn('name', function ($row) {
                 if ($row) {
-                    return '<a href data-href="' . url('menu/detail') . '/' . $row->id . '" class="show_detail">' . (str_replace("/", "", $row->url)) . '</a>';
+                    //return '<a href data-href="' . url('menu/detail') . '/' . $row->id . '" class="show_detail">' . (str_replace("/", "", $row->url)) . '</a>';
+                    return (str_replace("/", "", $row->url));
                 }
 
             })->addColumn('is_active', function ($row) {

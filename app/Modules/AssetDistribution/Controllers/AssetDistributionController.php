@@ -20,6 +20,9 @@ class AssetDistributionController extends MainController
      */
     public function index()
     {
+        if (!request()->ajax()) { 
+            return redirect()->to('/');
+        }
         return view('AssetDistribution::index');
     }
 

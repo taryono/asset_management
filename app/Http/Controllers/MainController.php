@@ -28,7 +28,7 @@ class MainController extends Controller {
         View::share('title', $this->_controller_name);
         View::share('controller_name', $this->_controller_name);
         Session()->put('controller_name', $controller_name);
-        Session()->put('model', $model);
+        Session()->put('model', $model); 
     }
 
     protected function _serialize(Request $request, $model = null, $ignored = []) {

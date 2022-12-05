@@ -96,7 +96,7 @@ class MenuRoleController extends MainController
     public function create()
     {
         $role = null;
-        $menus = \Models\Menu::where('is_active', 1)->pluck('name', 'id')->all();
+        $menus = \Models\Menu::where('is_publish', 1)->where('is_active', 1)->pluck('name', 'id')->all();
         if (request()->has('role_id')) {
             $role = Role::where(['is_active' => 1, 'id' => request()->input('role_id')])->first();
             return view('MenuRole::create', compact('role', 'menus'));

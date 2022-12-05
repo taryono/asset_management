@@ -23,7 +23,7 @@ class AssetController extends MainController
     public function index()
     {
 
-// add this code in controller
+        // add this code in controller
 
         // this is array of relation_name and its columns/fields
 

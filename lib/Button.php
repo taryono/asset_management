@@ -17,6 +17,7 @@ class Button
    {
       //$request =  new Request(); 
       //$controller = class_basename(Route::getCurrentRoute()->controller);
+      
       if (!Session()->get('role_ids') && !auth()->user()->isSuperUser()) {
          return;
       }

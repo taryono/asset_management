@@ -1,4 +1,7 @@
-<?php $roles = \Models\role::where('id', '<>', 1)->get();?>
+<?php 
+$roles = \Models\Role::where('id', '<>', 1)->get();
+$total_menu = \Models\Menu::where('menus.is_publish', 1)->where('menus.is_active', 1)->count();
+?>
 <div class="row">
     <div class="col-12 col-sm-12">
         <div class="card card-secondary card-tabs">
@@ -19,10 +22,13 @@
                         aria-labelledby="custom-tabs-one-{{$role->name}}-tab">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">List Akses {{ucwords($role->name)}}</h3> 
+                                <h3 class="card-title">List Akses {{ucwords($role->name)}}</h3>
+                                @if($role->menu->count() <= $total_menu)
+                                {!!create(['url'=> route('menu_role.create', ['role_id'=> $role->id]), 'text'=> 'Tambah Modul', 'style'=> "float: right;"]) !!}
+                                @endif
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body"> 
+                            <div class="card-body">
                                 <table id="menu_role{{$role->id}}" class="table table-bordered table-hover display standard" style="width: 100%"
                                     data-route="{{ route('menu_role.getListAjax',['role_id'=> $role->id]) }}">
                                     <thead>

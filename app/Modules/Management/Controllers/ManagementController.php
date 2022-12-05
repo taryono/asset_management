@@ -100,7 +100,10 @@ class ManagementController extends MainController
      * @return \Illuminate\Http\Response
      */
     public function acl()
-    {
+    { 
+        if (!request()->ajax()) { 
+            return redirect()->to('/');
+        }
         return view('Management::admin.index');
     }
 
@@ -131,6 +134,9 @@ class ManagementController extends MainController
      */
     public function asset()
     {
+        if (!request()->ajax()) { 
+            return redirect()->to('/');
+        }
         return view('Management::asset.index');
     }
 
