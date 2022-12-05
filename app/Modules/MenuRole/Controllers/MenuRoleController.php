@@ -115,11 +115,13 @@ class MenuRoleController extends MainController
     public function store(StoreMenuRole $request)
     {
         try {
-            $menu = \Models\Menu::find(request()->input('menu_id'));
+            $menus = \Models\Menu::find(request()->input('menu_id'));
             if (request()->has('role_id')) {
-                $menu->role()->detach();
-                $roles = Role::find(request()->input('role_id'));
-                $menu->role()->attach($roles);
+                foreach($menus as $menu){
+                    $menu->role()->detach();
+                    $roles = Role::find(request()->input('role_id'));
+                    $menu->role()->attach($roles); 
+                }
             }
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => 'Tambah data error => ' . $e->getMessage()], 400);
