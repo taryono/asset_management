@@ -1538,8 +1538,8 @@ function date_div(...$params)
 }
 
 function select_div(...$params)
-{
-    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->setData(data_get($params,2, []))->formGroup("select");
+{    
+    return (new \Lib\Template(data_get($params,0, null), data_get($params,1, []), data_get($params,2, [])))->setData(data_get($params,3, []))->formGroup("select");
 }
 
 function color_div(...$params)
