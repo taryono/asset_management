@@ -121,7 +121,7 @@
     @auth
     <script type="text/javascript" src="{{ asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('plugins/jquery-validation/additional-methods.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/jquery-validation/localization/messages_id.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/jquery-validation/localization/messages_id.js') }}"></script>
     <script type="text/javascript" src="{{ asset('plugins/summernote/summernote.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.form.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/mujahidin.js') }}"></script>

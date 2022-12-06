@@ -4,9 +4,9 @@
         {!! text_div('name', ['class' => 'form-control', 'placeholder' => 'Nama', 'required', 'id' => 'name']) !!}
         {!! select_div(
             'company_type_id',
-            ['class' => 'form-control', 'placeholder' => 'Type Perusahaan', 'required', 'id' => 'company_type_id'],
-            null,
+            ['class' => 'form-control', 'placeholder' => 'Tipe Perusahaan', 'required', 'id' => 'company_type_id'],
             Models\CompanyType::pluck('name', 'id')->all(),
+            null,
         ) !!}
         {!! text_div('cellphone', [
             'class' => 'form-control',

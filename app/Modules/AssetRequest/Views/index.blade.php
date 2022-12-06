@@ -1,0 +1,1 @@
+@include('AssetRequest::list')

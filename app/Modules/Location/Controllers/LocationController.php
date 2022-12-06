@@ -29,9 +29,19 @@ class LocationController extends MainController
     public function getListAjax()
     {
         if (request()->ajax()) {
-            $locations = $this->_model::select('*');
+            $locations = $this->_model::select('*')->with(['parent']);
             return datatables()->of($locations)
                 ->addIndexColumn()
+                ->addColumn('parent', function ($row) {
+                    if ($row) {
+                          
+                        if($row->parent){
+                            return $row->parent->name;
+                        } 
+
+                        return "-";
+                    }
+                }) 
                 ->addColumn('action', function ($row) {
                     if ($row) {
                         $btn = '<div class="d-flex mr-1">';
