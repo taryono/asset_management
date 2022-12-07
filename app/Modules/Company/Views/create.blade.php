@@ -9,12 +9,12 @@
             null,
         ) !!}
         {!! text_div('cellphone', [
-            'class' => 'form-control',
+            'class' => 'form-control cellphone',
             'placeholder' => 'No Hp',
             'required',
             'id' => 'cellphone',
         ]) !!}
-        {!! text_div('phone', ['class' => 'form-control', 'placeholder' => 'No Telephone', 'required', 'id' => 'phone']) !!}
+        {!! text_div('phone', ['class' => 'form-control phone', 'placeholder' => 'No Telephone', 'required', 'id' => 'phone']) !!}
         {!! text_div('email', ['class' => 'form-control', 'placeholder' => 'Email', 'required', 'id' => 'email']) !!}
         {!! text_div('website', [
             'class' => 'form-control',

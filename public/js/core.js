@@ -296,7 +296,7 @@ $(function() {
         }
         $("a.nav-link").removeClass("active");
         var url =  $(this).attr("href");
-        var target = $("div#container");
+        var target = $("div#container").html('<div id=\'cover-spin\'></div>');
         $(target).addClass("loading"); 
         $(this).addClass("active");
         $.ajax({
